@@ -21,7 +21,7 @@ const Tile = ({
         isSelected
           ? "bg-orange-300 hover:bg-orange-400"
           : "bg-slate-300 hover:bg-slate-400"
-      } hover:cursor-pointer transition-colors duration-300 h-20 w-20`}
+      } hover:cursor-pointer transition-colors duration-300 h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24`}
       onClick={() => onClick(id)}
     >
       {isPlaying && <StopIcon />}

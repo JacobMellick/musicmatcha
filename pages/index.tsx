@@ -68,7 +68,7 @@ const Home = ({ tracks }: HomeProps) => {
   return (
     <Layout>
       <Page title="Home">
-        <div className="flex justify-center w-screen">
+        <div className="flex justify-center w-screen pt-8 sm:pt-0">
           <div className="grid grid-cols-4 gap-4">
             {state.tiles.map((tile, index) => (
               <Tile
