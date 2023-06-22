@@ -69,8 +69,10 @@ export const reducer = (state: State, action: Action): State => {
 
       if (clickedTile == state.playingTile) {
         playingTile = undefined;
+        if (state.selectedTiles.length == 1) {
+          moves--;
+        }
         selectedTiles = [];
-        moves--;
       } else {
         playingTile = clickedTile;
         if (state.selectedTiles.length == 2) {
