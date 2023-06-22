@@ -5,8 +5,10 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 
-import { useState } from "react";
-import { Dialog } from "@headlessui/react";
+import { motion } from "framer-motion";
+
+import { useState, Fragment } from "react";
+import { Dialog, Transition } from "@headlessui/react";
 
 const Header = () => {
   let [infoModal, setInfoModal] = useState(false);
@@ -14,7 +16,7 @@ const Header = () => {
   let [gearModal, setGearModal] = useState(false);
 
   return (
-    <div className="flex w-full p-4 shadow-sm justify-between">
+    <div className="flex w-full p-4 shadow-sm justify-between mb-8">
       <div className="text-orange-500">musicmatch</div>
       <div className="flex space-x-2">
         <InformationCircleIcon
@@ -42,6 +44,7 @@ const Header = () => {
           }}
         />
       </div>
+
       <Dialog
         open={infoModal}
         onClose={() => setInfoModal(false)}
@@ -54,16 +57,19 @@ const Header = () => {
               <Dialog.Title className="text-2xl font-bold pb-2">
                 How to Play
               </Dialog.Title>
-              <XMarkIcon
-                className="text-gray-500 w-8 h-8 hover:cursor-pointer"
-                onClick={() => setInfoModal(false)}
-              />
+              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                <XMarkIcon
+                  className="text-gray-500 w-8 h-8 hover:cursor-pointer"
+                  onClick={() => setInfoModal(false)}
+                />
+              </motion.div>
             </div>
 
             <p className="pb-4">Match the music!</p>
           </Dialog.Panel>
         </div>
       </Dialog>
+
       <Dialog
         open={gearModal}
         onClose={() => setGearModal(false)}
