@@ -39,15 +39,34 @@ const Card = ({
         </p>
 
         <p className="w-[30ch] text-ellipsis overflow-hidden">
-          {artists.map((artist) => (
-            <a
-              className="text-gray-500 text-xs hover:underline"
-              href={artist.artist_url}
-              target="_blank"
-            >
-              {artist.name}{" "}
-            </a>
-          ))}
+          {artists.map((artist) => {
+            if (artists.indexOf(artist) == artists.length - 1) {
+              return (
+                <>
+                  <a
+                    className="text-gray-500 text-xs hover:underline"
+                    href={artist.artist_url}
+                    target="_blank"
+                  >
+                    {artist.name}
+                  </a>
+                </>
+              );
+            } else {
+              return (
+                <>
+                  <a
+                    className="text-gray-500 text-xs hover:underline"
+                    href={artist.artist_url}
+                    target="_blank"
+                  >
+                    {artist.name}
+                  </a>
+                  <span className="text-gray-500 text-xs">{", "}</span>
+                </>
+              );
+            }
+          })}
         </p>
       </div>
 
