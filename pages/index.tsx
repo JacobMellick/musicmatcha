@@ -12,92 +12,15 @@ import { reducer } from "@/components/reducers/game";
 
 import { NUM_MOVES } from "@/lib/constants";
 import Card from "@/components/cards/Card";
+import GameOver from "@/components/GameOver";
 
 type HomeProps = {
-  tracks: Track[];
-};
-
-type GameOverProps = {
-  tracks: Track[];
-  solved: Track[];
-  moves: number;
-};
-
-type cards = {
   id: number;
-  isPlaying: boolean;
-  found: boolean;
-  track: Track;
-}[];
-
-const GameOver = ({ tracks, solved, moves }: GameOverProps) => {
-  const [playingCard, setPlayingCard] = useState("");
-
-  const cards: cards = tracks.map((track, index) => ({
-    id: index,
-    isPlaying: false,
-    found: false,
-    track: track,
-  }));
-
-  const handleCardClick = (track_url: string) => {
-    if (playingCard === track_url) {
-      setPlayingCard("");
-    } else {
-      setPlayingCard(track_url);
-    }
-  };
-
-  const { setCurrentTrack } = usePlayer();
-
-  useEffect(() => {
-    setCurrentTrack(null);
-  }, []);
-
-  useEffect(() => {
-    if (playingCard !== "") {
-      setCurrentTrack({
-        preview_url: playingCard,
-        startPct: 0,
-        endPct: 100,
-      });
-    } else {
-      setCurrentTrack(null);
-    }
-  }, [playingCard]);
-
-  return (
-    <>
-      {moves > 0 ? (
-        <h2 className="font-bold text-green-500 text-xl text-center">
-          You finished today's puzzle in {NUM_MOVES - moves} moves!
-        </h2>
-      ) : (
-        <h2 className="text-green-500 text-xl text-center font-bold">
-          Nice try!
-        </h2>
-      )}
-
-      <div className="py-4 w-5/6 sm:w-3/6 lg:w-2/6 m-auto space-y-4">
-        {cards.map((card) => (
-          <Card
-            id={card.id}
-            key={card.id}
-            name={card.track.name}
-            preview_url={card.track.preview_url}
-            track_url={card.track.track_url}
-            artists={card.track.artists}
-            found={solved.includes(card.track)}
-            isPlaying={playingCard === card.track.preview_url}
-            onClick={handleCardClick}
-          />
-        ))}
-      </div>
-    </>
-  );
+  tracks: Track[];
+  order: number[];
 };
 
-const Home = ({ tracks }: HomeProps) => {
+const Home = ({ id, tracks, order }: HomeProps) => {
   const [state, dispatch] = useReducer(reducer, {
     tracks,
     tiles: [],
@@ -108,20 +31,72 @@ const Home = ({ tracks }: HomeProps) => {
 
   const { setCurrentTrack } = usePlayer();
 
+  const [gameOver, setGameOver] = useState(false);
+
+  useEffect(() => {
+    const localId = localStorage.getItem("id");
+    const localMoves = localStorage.getItem("moves");
+    const localSolved = localStorage.getItem("solved");
+    const localStreak = localStorage.getItem("streak");
+    const localPlays = localStorage.getItem("plays");
+    const localWins = localStorage.getItem("wins");
+    if (
+      localId === null ||
+      JSON.parse(localId) !== id ||
+      localMoves === null ||
+      localSolved === null ||
+      localStreak === null ||
+      localPlays === null ||
+      localWins === null
+    ) {
+      localStorage.setItem("recorded", JSON.stringify("no"));
+      localStorage.setItem("solved", JSON.stringify([]));
+      localStorage.setItem("moves", JSON.stringify(NUM_MOVES));
+      if (localId === null) {
+        localStorage.setItem("streak", JSON.stringify(0));
+        localStorage.setItem("plays", JSON.stringify(0));
+        localStorage.setItem("wins", JSON.stringify(0));
+      }
+
+      dispatch({
+        type: "init",
+        payload: { order: order, solved: [], moves: NUM_MOVES },
+      });
+    } else {
+      dispatch({
+        type: "init",
+        payload: {
+          order: order,
+          solved: JSON.parse(localSolved),
+          moves: JSON.parse(localMoves),
+        },
+      });
+    }
+    if (localId !== null) {
+      if (id - JSON.parse(localId) > 1) {
+        localStorage.setItem("streak", JSON.stringify(0));
+      }
+    }
+    localStorage.setItem("id", JSON.stringify(id));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("moves", JSON.stringify(state.moves));
+    localStorage.setItem("solved", JSON.stringify(state.solved));
+  }, [state]);
+
   const handleTileClick = (id: number) => {
     dispatch({ type: "tileClick", payload: id });
   };
 
-  useEffect(() => {
-    dispatch({ type: "init" });
-  }, []);
-
-  const [gameOver, setGameOver] = useState(false);
+  const handleCardClick = (id: string) => {
+    dispatch({ type: "cardClick", payload: id });
+  };
 
   const checkGameOver = () => {
     if (
-      state.moves == 0 ||
-      (state.solved.length == state.tiles.length / 2 &&
+      state.moves === 0 ||
+      (state.solved.length === state.tiles.length / 2 &&
         state.solved.length != 0)
     ) {
       setGameOver(true);
@@ -131,23 +106,78 @@ const Home = ({ tracks }: HomeProps) => {
   useEffect(() => checkGameOver(), [state.solved]);
 
   useEffect(() => {
+    const localPlays = localStorage.getItem("plays");
+    const localWins = localStorage.getItem("wins");
+    const localStreak = localStorage.getItem("streak");
+    const localRecorded = localStorage.getItem("recorded");
+    let tempRecorded = "no";
+    if (localRecorded !== null) {
+      if (JSON.parse(localRecorded) !== tempRecorded) {
+        tempRecorded = "yes";
+      }
+    }
+    if (tempRecorded === "no") {
+      if (state.moves === 0) {
+        if (localPlays !== null) {
+          let tempPlays = JSON.parse(localPlays);
+          tempPlays++;
+          localStorage.setItem("plays", JSON.stringify(tempPlays));
+          localStorage.setItem("recorded", JSON.stringify("yes"));
+        }
+      } else if (
+        state.solved.length === state.tiles.length / 2 &&
+        state.solved.length != 0
+      ) {
+        localStorage.setItem("recorded", JSON.stringify("yes"));
+        if (localPlays !== null) {
+          let tempPlays = JSON.parse(localPlays);
+          tempPlays++;
+          localStorage.setItem("plays", JSON.stringify(tempPlays));
+        }
+        if (localWins !== null) {
+          let tempWins = JSON.parse(localWins);
+          tempWins++;
+          localStorage.setItem("wins", JSON.stringify(tempWins));
+        }
+        if (localStreak !== null) {
+          let tempStreak = JSON.parse(localStreak);
+          tempStreak++;
+          localStorage.setItem("streak", JSON.stringify(tempStreak));
+        }
+      }
+    }
+  }, [gameOver]);
+
+  useEffect(() => {
     if (
       typeof state.playingTile !== "undefined" &&
       state.moves > 0 &&
       state.solved.length < 8
     ) {
-      console.log(state.solved.length);
-      console.log(gameOver);
-      console.log("playing");
       setCurrentTrack({
         preview_url: state.tiles[state.playingTile].track.preview_url,
         startPct: state.tiles[state.playingTile].startPct,
         endPct: state.tiles[state.playingTile].endPct,
       });
+    } else if (
+      typeof state.playingCard !== "undefined" &&
+      state.solved.length < 8
+    ) {
+      setCurrentTrack({
+        preview_url: state.playingCard,
+        startPct: 0,
+        endPct: 100,
+      });
     } else {
       setCurrentTrack(null);
     }
-  }, [state.playingTile, state.tiles, setCurrentTrack, gameOver]);
+  }, [
+    state.playingTile,
+    state.tiles,
+    setCurrentTrack,
+    gameOver,
+    state.playingCard,
+  ]);
 
   return (
     <Layout>
@@ -155,22 +185,32 @@ const Home = ({ tracks }: HomeProps) => {
       {!gameOver ? (
         <Page title="Home">
           <div className="flex justify-center w-screen pt-8 sm:pt-0">
-            <div className="grid grid-cols-4 gap-2 sm:gap-4">
-              {state.tiles.map((tile, index) => (
-                <Tile
-                  key={index}
-                  id={index}
-                  showTile={!tile.isSolved}
-                  isPlaying={tile.isPlaying}
-                  isSelected={state.selectedTiles.includes(index)}
-                  onClick={handleTileClick}
-                />
-              ))}
+            <div className="grid grid-cols-4 gap-2 sm:gap-4 p-8 bg-neutral-100 rounded-lg">
+              {state.tiles.map((tile, index) => {
+                let showTile = true;
+                const tileTrack = JSON.stringify(tile.track);
+
+                for (let track in state.solved) {
+                  if (tileTrack === JSON.stringify(state.solved[track])) {
+                    showTile = false;
+                  }
+                }
+                return (
+                  <Tile
+                    key={index}
+                    id={index}
+                    showTile={showTile}
+                    isPlaying={tile.isPlaying}
+                    isSelected={state.selectedTiles.includes(index)}
+                    onClick={handleTileClick}
+                  />
+                );
+              })}
             </div>
           </div>
           <div className="mt-8 flex justify-center items-center">
             <div
-              className={`p-4 text-center font-medium text-4xl xl:text-6xl text-red-500`}
+              className={`flex text-center justify-center items-center font-medium text-4xl text-green-500 bg-neutral-100 rounded-lg w-16 h-16`}
             >
               {state.moves}
             </div>
@@ -185,14 +225,8 @@ const Home = ({ tracks }: HomeProps) => {
                 track_url={state.solved[0].track_url}
                 preview_url={state.solved[0].preview_url}
                 artists={state.solved[0].artists}
-                onClick={() => {
-                  setCurrentTrack({
-                    preview_url: state.solved[0].preview_url,
-                    startPct: 0,
-                    endPct: 100,
-                  });
-                }}
-                isPlaying={true}
+                onClick={handleCardClick}
+                isPlaying={state.playingCard === state.solved[0].preview_url}
                 found={true}
               />
             )}
@@ -212,7 +246,9 @@ const Home = ({ tracks }: HomeProps) => {
 export async function getStaticProps() {
   return {
     props: {
-      tracks: Puzzle,
+      id: Puzzle.id,
+      tracks: Puzzle.tracks,
+      order: Puzzle.order,
     },
   };
 }
