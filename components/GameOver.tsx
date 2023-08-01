@@ -37,7 +37,7 @@ const GameOver = ({ tracks, solved, moves }: GameOverProps) => {
     }
   };
 
-  const { setCurrentTrack } = usePlayer();
+  const { setCurrentTrack, isPlaying } = usePlayer();
 
   useEffect(() => {
     setCurrentTrack(null);
@@ -48,7 +48,7 @@ const GameOver = ({ tracks, solved, moves }: GameOverProps) => {
       setCurrentTrack({
         preview_url: playingCard,
         startPct: 0,
-        endPct: 100,
+        endPct: 1,
       });
     } else {
       setCurrentTrack(null);
@@ -58,8 +58,8 @@ const GameOver = ({ tracks, solved, moves }: GameOverProps) => {
   return (
     <>
       {moves > 0 ? (
-        <h2 className="font-bold text-green-500 text-xl text-center">
-          You finished today's puzzle in {NUM_MOVES - moves} moves!
+        <h2 className="py-2 sm:p-0 font-bold text-gray-500 text-lg sm:text-xl text-center">
+          You finished today&apos;s puzzle in {NUM_MOVES - moves} moves!
         </h2>
       ) : (
         <h2 className="text-green-500 text-xl text-center font-bold">
@@ -88,7 +88,7 @@ const GameOver = ({ tracks, solved, moves }: GameOverProps) => {
               track_url={card.track.track_url}
               artists={card.track.artists}
               found={showCard}
-              isPlaying={playingCard === card.track.preview_url}
+              isPlaying={playingCard === card.track.preview_url && isPlaying}
               onClick={handleCardClick}
             />
           );

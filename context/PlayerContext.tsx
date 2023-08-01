@@ -40,7 +40,7 @@ export default function PlayerProvider({
     const setAudioTime = () => {
       const currTime = tempAudio.currentTime;
       setCurrentTime(currTime);
-      if (currTime > tempAudio.duration * currentTrack.endPct) {
+      if (currTime >= tempAudio.duration * currentTrack.endPct) {
         tempAudio.pause();
         tempAudio.currentTime = tempAudio.duration * currentTrack.startPct;
         setIsPlaying(false);

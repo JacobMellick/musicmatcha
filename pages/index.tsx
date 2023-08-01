@@ -1,18 +1,18 @@
 import { useEffect, useReducer, useState } from "react";
 
+import Card from "@/components/cards/Card";
+import GameOver from "@/components/GameOver";
 import Header from "@/components/layout/Header";
 import Layout from "@/components/layout/Layout";
 import Page from "@/components/layout/Page";
-import Tile from "@/components/Tile";
-import Puzzle from "@/data/puzzle.json";
-import type { Track } from "@/types/proj01";
-import { usePlayer } from "@/context/PlayerContext";
-
 import { reducer } from "@/components/reducers/game";
-
+import Tile from "@/components/Tile";
+import { usePlayer } from "@/context/PlayerContext";
+import Puzzle from "@/data/puzzle.json";
+import useLocalStorage from "@/hooks/useLocalStorage";
 import { NUM_MOVES } from "@/lib/constants";
-import Card from "@/components/cards/Card";
-import GameOver from "@/components/GameOver";
+
+import type { Track } from "@/types/proj01";
 
 type HomeProps = {
   id: number;
@@ -20,7 +20,32 @@ type HomeProps = {
   order: number[];
 };
 
+interface LocalDataLayout {
+  id: number;
+  moves: number;
+  solved: Track[];
+  streak: number;
+  plays: number;
+  wins: number;
+  recorded: boolean;
+  started: boolean;
+  [key: string]: unknown;
+}
+
 const Home = ({ id, tracks, order }: HomeProps) => {
+  const [localData, saveLocalData] = useLocalStorage<LocalDataLayout>(
+    "musicmatcha",
+    {
+      id: id,
+      moves: NUM_MOVES,
+      solved: [],
+      streak: 0,
+      plays: 0,
+      wins: 0,
+      recorded: false,
+      started: false,
+    }
+  );
   const [state, dispatch] = useReducer(reducer, {
     tracks,
     tiles: [],
@@ -29,60 +54,36 @@ const Home = ({ id, tracks, order }: HomeProps) => {
     solved: [],
   });
 
-  const { setCurrentTrack } = usePlayer();
+  const { setCurrentTrack, isPlaying } = usePlayer();
 
   const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
-    const localId = localStorage.getItem("id");
-    const localMoves = localStorage.getItem("moves");
-    const localSolved = localStorage.getItem("solved");
-    const localStreak = localStorage.getItem("streak");
-    const localPlays = localStorage.getItem("plays");
-    const localWins = localStorage.getItem("wins");
-    if (
-      localId === null ||
-      JSON.parse(localId) !== id ||
-      localMoves === null ||
-      localSolved === null ||
-      localStreak === null ||
-      localPlays === null ||
-      localWins === null
-    ) {
-      localStorage.setItem("recorded", JSON.stringify("no"));
-      localStorage.setItem("solved", JSON.stringify([]));
-      localStorage.setItem("moves", JSON.stringify(NUM_MOVES));
-      if (localId === null) {
-        localStorage.setItem("streak", JSON.stringify(0));
-        localStorage.setItem("plays", JSON.stringify(0));
-        localStorage.setItem("wins", JSON.stringify(0));
-      }
+    if (state.solved.length > 0) {
+      saveLocalData({ ...localData, started: true });
+      console.log("changed");
+    }
+  }, [state.solved]);
 
-      dispatch({
-        type: "init",
-        payload: { order: order, solved: [], moves: NUM_MOVES },
-      });
-    } else {
-      dispatch({
-        type: "init",
-        payload: {
-          order: order,
-          solved: JSON.parse(localSolved),
-          moves: JSON.parse(localMoves),
-        },
-      });
+  useEffect(() => {
+    dispatch({
+      type: "init",
+      payload: {
+        order: order,
+        solved: localData.solved,
+        moves: localData.moves,
+      },
+    });
+
+    if (id - localData.id > 1) {
+      saveLocalData({ ...localData, streak: 0 });
     }
-    if (localId !== null) {
-      if (id - JSON.parse(localId) > 1) {
-        localStorage.setItem("streak", JSON.stringify(0));
-      }
-    }
-    localStorage.setItem("id", JSON.stringify(id));
+
+    saveLocalData({ ...localData, id: id });
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("moves", JSON.stringify(state.moves));
-    localStorage.setItem("solved", JSON.stringify(state.solved));
+    saveLocalData({ ...localData, moves: state.moves, solved: state.solved });
   }, [state]);
 
   const handleTileClick = (id: number) => {
@@ -106,44 +107,25 @@ const Home = ({ id, tracks, order }: HomeProps) => {
   useEffect(() => checkGameOver(), [state.solved]);
 
   useEffect(() => {
-    const localPlays = localStorage.getItem("plays");
-    const localWins = localStorage.getItem("wins");
-    const localStreak = localStorage.getItem("streak");
-    const localRecorded = localStorage.getItem("recorded");
-    let tempRecorded = "no";
-    if (localRecorded !== null) {
-      if (JSON.parse(localRecorded) !== tempRecorded) {
-        tempRecorded = "yes";
-      }
-    }
-    if (tempRecorded === "no") {
+    if (!localData.recorded) {
       if (state.moves === 0) {
-        if (localPlays !== null) {
-          let tempPlays = JSON.parse(localPlays);
-          tempPlays++;
-          localStorage.setItem("plays", JSON.stringify(tempPlays));
-          localStorage.setItem("recorded", JSON.stringify("yes"));
-        }
+        saveLocalData({
+          ...localData,
+          plays: localData.plays + 1,
+          recorded: true,
+          streak: 0,
+        });
       } else if (
         state.solved.length === state.tiles.length / 2 &&
-        state.solved.length != 0
+        state.solved.length !== 0
       ) {
-        localStorage.setItem("recorded", JSON.stringify("yes"));
-        if (localPlays !== null) {
-          let tempPlays = JSON.parse(localPlays);
-          tempPlays++;
-          localStorage.setItem("plays", JSON.stringify(tempPlays));
-        }
-        if (localWins !== null) {
-          let tempWins = JSON.parse(localWins);
-          tempWins++;
-          localStorage.setItem("wins", JSON.stringify(tempWins));
-        }
-        if (localStreak !== null) {
-          let tempStreak = JSON.parse(localStreak);
-          tempStreak++;
-          localStorage.setItem("streak", JSON.stringify(tempStreak));
-        }
+        saveLocalData({
+          ...localData,
+          plays: localData.plays + 1,
+          wins: localData.wins + 1,
+          streak: localData.streak + 1,
+          recorded: true,
+        });
       }
     }
   }, [gameOver]);
@@ -166,7 +148,7 @@ const Home = ({ id, tracks, order }: HomeProps) => {
       setCurrentTrack({
         preview_url: state.playingCard,
         startPct: 0,
-        endPct: 100,
+        endPct: 1,
       });
     } else {
       setCurrentTrack(null);
@@ -181,7 +163,14 @@ const Home = ({ id, tracks, order }: HomeProps) => {
 
   return (
     <Layout>
-      <Header />
+      <Header
+        started={localData.started}
+        recorded={localData.recorded}
+        solved={localData.solved}
+        wins={localData.wins}
+        plays={localData.plays}
+        streak={localData.streak}
+      />
       {!gameOver ? (
         <Page title="Home">
           <div className="flex justify-center w-screen pt-8 sm:pt-0">
@@ -226,7 +215,9 @@ const Home = ({ id, tracks, order }: HomeProps) => {
                 preview_url={state.solved[0].preview_url}
                 artists={state.solved[0].artists}
                 onClick={handleCardClick}
-                isPlaying={state.playingCard === state.solved[0].preview_url}
+                isPlaying={
+                  state.playingCard === state.solved[0].preview_url && isPlaying
+                }
                 found={true}
               />
             )}

@@ -44,7 +44,7 @@ const Card = ({
           {artists.map((artist) => {
             if (artists.indexOf(artist) == artists.length - 1) {
               return (
-                <>
+                <span key={artist.artist_url}>
                   <a
                     className="text-gray-500 text-xs hover:underline"
                     href={artist.artist_url}
@@ -52,11 +52,11 @@ const Card = ({
                   >
                     {artist.name}
                   </a>
-                </>
+                </span>
               );
             } else {
               return (
-                <>
+                <span key={artist.artist_url}>
                   <a
                     className="text-gray-500 text-xs hover:underline"
                     href={artist.artist_url}
@@ -65,7 +65,7 @@ const Card = ({
                     {artist.name}
                   </a>
                   <span className="text-gray-500 text-xs">{", "}</span>
-                </>
+                </span>
               );
             }
           })}

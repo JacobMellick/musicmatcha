@@ -11,55 +11,30 @@ import { Dialog, Transition } from "@headlessui/react";
 import Card from "../cards/Card";
 import { Track } from "@/types/proj01";
 
-const Header = () => {
-  let [openAbout, setOpenAbout] = useState(true);
+type HeaderProps = {
+  started: boolean;
+  recorded: boolean;
+  solved: Track[];
+  wins: number;
+  plays: number;
+  streak: number;
+};
 
-  useEffect(() => {
-    const localRecorded = localStorage.getItem("recorded");
-    if (localRecorded === null) {
-      localStorage.setItem("recorded", JSON.stringify("no"));
-    } else if (JSON.parse(localRecorded) === "yes") {
-      console.log("openAboutisChanging!!");
-      setOpenAbout(false);
-      console.log(openAbout);
-    }
-  }, []);
-
-  let [infoModal, setInfoModal] = useState(openAbout);
-  let [statsModal, setStatsModal] = useState(!openAbout);
-  let [solved, setSolved] = useState<Track[]>([]);
+const Header = ({
+  started,
+  recorded,
+  solved,
+  wins,
+  plays,
+  streak,
+}: HeaderProps) => {
+  let [infoModal, setInfoModal] = useState(!started);
+  let [statsModal, setStatsModal] = useState(recorded);
   let [showSolved, setShowSolved] = useState(false);
-  let [played, setPlayed] = useState(0);
-  let [winrate, setWinrate] = useState("0%");
-  let [streak, setStreak] = useState(0);
-
-  useEffect(() => {
-    const localPlays = localStorage.getItem("plays");
-    const localWins = localStorage.getItem("wins");
-    const localStreak = localStorage.getItem("streak");
-
-    if (localPlays !== null && localWins !== null && localStreak !== null) {
-      let wins = JSON.parse(localWins);
-      let plays = JSON.parse(localPlays);
-      let numWinrate = Math.ceil((wins / plays) * 100);
-      setWinrate(numWinrate + "%");
-      setPlayed(plays);
-      setStreak(JSON.parse(localStreak));
-    }
-  }, [statsModal]);
 
   useEffect(() => {
     if (solved.length !== 0) {
       setShowSolved(true);
-    }
-  }, [statsModal]);
-
-  useEffect(() => {
-    const localSolved = localStorage.getItem("solved");
-    if (localSolved === null) {
-      setSolved([]);
-    } else {
-      setSolved(JSON.parse(localSolved));
     }
   }, [statsModal]);
 
@@ -123,21 +98,31 @@ const Header = () => {
                   </Dialog.Title>
                   <div className="mt-2 mb-4">
                     <p className="text-sm text-gray-500">
-                      Can you match all eight songs in ten tries?
+                      Your daily music matching game.
                     </p>
                   </div>
-                  <h3 className="text-md">How to Play</h3>
-
+                  <h3 className="text-lg font-medium">How to Play</h3>
                   <p className="text-sm text-gray-500 mt-1">
-                    Click on a square to play a short clip from a song.
-                    Selecting two clips from the same song will clear the
-                    matching squares from the grid.
+                    Click on a tile to play a short clip from a track. Selecting
+                    two clips from the same track will clear the matching tiles
+                    from the grid.
                   </p>
+                  <div className="pt-2">
+                    <p className="text-sm text-gray-500 mt-1">
+                      ⚠️- <span className="italic">THIS GAME PLAYS AUDIO</span>
+                    </p>
+                    <p className="text-sm text-gray-500 mt-1">
+                      🗣️ -{" "}
+                      <span className="italic">
+                        MAY CONTAIN EXPLICIT LYRICS
+                      </span>
+                    </p>
+                  </div>
 
                   <div className="mt-4">
                     <button
                       type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-green-100 px-4 py-2 text-sm font-medium text-green-900 hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
+                      className="inline-flex justify-center rounded-md border bg-green-100 px-4 py-2 text-sm font-medium text-green-900 hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
                       onClick={() => setInfoModal(false)}
                     >
                       Play
@@ -193,13 +178,15 @@ const Header = () => {
                   >
                     Stats
                   </Dialog.Title>
-                  <div className="flex mt-2 justify-between px-24 mb-2 text-center">
+                  <div className="flex mt-2 px-8 sm:px-24 justify-between mb-2 text-center">
                     <div>
-                      <div className="text-xl">{played}</div>
+                      <div className="text-xl">{plays}</div>
                       <div className="text-xs">Played</div>
                     </div>
                     <div>
-                      <div className="text-xl">{winrate}</div>
+                      <div className="text-xl">
+                        {Math.round((wins / plays) * 100) + "%"}
+                      </div>
                       <div className="text-xs">Winrate</div>
                     </div>
                     <div>
@@ -209,10 +196,11 @@ const Header = () => {
                   </div>
                   {showSolved && (
                     <>
-                      <h3 className="text-md">Today's Songs Found</h3>
+                      <h3 className="text-md">Today&apos;s Songs Found</h3>
                       <div className="pt-2 flex flex-col gap-2">
                         {solved.map((card) => (
                           <Card
+                            key={card.id}
                             id={card.id}
                             name={card.name}
                             track_url={card.track_url}
