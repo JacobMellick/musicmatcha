@@ -1,10 +1,10 @@
 import { Track } from "@/types/proj01";
 
-const shuffleArray = (array: any[]) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
+const orderArray = (array: any[], order: number[]) => {
+  const orderedArray = order.map((item) => {
+    return array[item];
+  });
+  return orderedArray;
 };
 
 type State = {
@@ -19,6 +19,7 @@ type State = {
   }[];
   selectedTiles: number[];
   playingTile?: number;
+  playingCard?: string | undefined;
   moves: number;
   solved: Track[];
 };
@@ -26,38 +27,45 @@ type State = {
 type Action =
   | {
       type: "init";
+      payload: { order: number[]; solved: Track[]; moves: number };
     }
   | {
       type: "tileClick";
       payload: number;
+    }
+  | {
+      type: "cardClick";
+      payload: string;
     };
 
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "init":
-      const tiles: State["tiles"] = state.tracks.flatMap((track) => [
+      const unTiles: State["tiles"] = state.tracks.flatMap((track) => [
         {
           id: 0,
           track,
           isSolved: false,
           isPlaying: false,
           startPct: 0.1,
-          endPct: 0.4,
+          endPct: 0.3,
         },
         {
           id: 0,
           track,
           isSolved: false,
           isPlaying: false,
-          startPct: 0.6,
+          startPct: 0.7,
           endPct: 0.9,
         },
       ]);
-      shuffleArray(tiles);
+      const tiles = orderArray(unTiles, action.payload.order);
       return {
         ...state,
         tiles: tiles.map((tile, index) => ({ ...tile, id: index })),
         selectedTiles: [],
+        moves: action.payload.moves,
+        solved: action.payload.solved,
       };
     case "tileClick":
       const clickedTile = action.payload;
@@ -66,6 +74,7 @@ export const reducer = (state: State, action: Action): State => {
       let removeTiles: number[] = [];
       let solved: Track[] = [...state.solved];
       let moves = state.moves;
+      let playingCard: string | undefined;
 
       if (clickedTile == state.playingTile) {
         playingTile = undefined;
@@ -93,12 +102,14 @@ export const reducer = (state: State, action: Action): State => {
         removeTiles = [...selectedTiles];
         solved = [state.tiles[selectedTiles[0]].track, ...solved];
         selectedTiles = [];
+        playingCard = solved[0].preview_url;
 
         moves++;
       }
 
       return {
         ...state,
+        playingCard,
         selectedTiles: [...selectedTiles],
         playingTile,
         moves,
@@ -108,6 +119,20 @@ export const reducer = (state: State, action: Action): State => {
           isPlaying: tile.id == playingTile,
           isSolved: tile.isSolved || removeTiles.includes(tile.id),
         })),
+      };
+    case "cardClick":
+      const clickedCard = action.payload;
+      let newCard;
+      if (state.playingCard == clickedCard) {
+        newCard = undefined;
+      } else {
+        newCard = clickedCard;
+      }
+
+      return {
+        ...state,
+        playingCard: newCard,
+        playingTile: undefined,
       };
   }
 };
