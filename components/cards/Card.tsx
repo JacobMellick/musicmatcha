@@ -1,5 +1,5 @@
-import { PlayIcon } from "@heroicons/react/24/outline";
-import { PauseIcon } from "@heroicons/react/24/outline";
+import PlayIcon from "../icons/PlayIcon";
+import StopIcon from "../icons/StopIcon";
 
 type CardProps = {
   id: number;
@@ -13,6 +13,7 @@ type CardProps = {
   onClick: (id: string) => void;
   isPlaying?: boolean;
   found: boolean;
+  playable?: boolean;
 };
 
 const Card = ({
@@ -24,6 +25,7 @@ const Card = ({
   onClick,
   isPlaying = false,
   found,
+  playable = true,
 }: CardProps) => {
   return (
     <div
@@ -69,17 +71,16 @@ const Card = ({
           })}
         </p>
       </div>
-
-      <div
-        className="flex hover:cursor-pointer"
-        onClick={() => onClick(preview_url)}
-      >
-        {isPlaying ? (
-          <PauseIcon className="text-gray-600 w-8 h-8"></PauseIcon>
-        ) : (
-          <PlayIcon className="text-gray-600 w-8 h-8"></PlayIcon>
-        )}
-      </div>
+      {playable ? (
+        <div
+          className="flex hover:cursor-pointer p-2 bg-white rounded-full hover:scale-105 hover:bg-neutral-100"
+          onClick={() => onClick(preview_url)}
+        >
+          {isPlaying ? <StopIcon /> : <PlayIcon />}
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 };
