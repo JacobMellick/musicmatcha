@@ -19,18 +19,18 @@ const Tile = ({
   return showTile ? (
     <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
       <div
-        className={`flex items-center justify-center ${
+        className={`flex items-center justify-center rounded-lg transition ${
           isSelected
             ? "bg-green-300 hover:bg-green-400"
             : "bg-slate-300 hover:bg-slate-400"
-        } hover:cursor-pointer transition-colors duration-300 h-16 w-16 lg:h-24 lg:w-24`}
+        } hover:cursor-pointer transition-colors duration-300 h-16 w-16 lg:h-20 lg:w-20`}
         onClick={() => onClick(id)}
       >
         {isPlaying && <StopIcon />}
       </div>
     </motion.div>
   ) : (
-    <div className="h-16 w-16 lg:h-24 lg:w-24"></div>
+    <div className="h-16 w-16 lg:h-20 lg:w-20"></div>
   );
 };
 
