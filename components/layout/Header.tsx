@@ -28,9 +28,17 @@ const Header = ({
   plays,
   streak,
 }: HeaderProps) => {
-  let [infoModal, setInfoModal] = useState(!started);
-  let [statsModal, setStatsModal] = useState(recorded);
+  let [infoModal, setInfoModal] = useState(false);
+  let [statsModal, setStatsModal] = useState(false);
   let [showSolved, setShowSolved] = useState(false);
+
+  useEffect(() => {
+    if (recorded) {
+      setStatsModal(true);
+    } else if (!started) {
+      setInfoModal(true);
+    }
+  }, []);
 
   useEffect(() => {
     if (solved.length !== 0) {
@@ -185,7 +193,9 @@ const Header = ({
                     </div>
                     <div>
                       <div className="text-xl">
-                        {Math.round((wins / plays) * 100) + "%"}
+                        {plays > 0
+                          ? Math.round((wins / plays) * 100) + "%"
+                          : "0%"}
                       </div>
                       <div className="text-xs">Winrate</div>
                     </div>
