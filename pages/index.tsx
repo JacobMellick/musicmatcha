@@ -59,13 +59,16 @@ const Home = ({ id, tracks, order }: HomeProps) => {
   const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
-    if (state.solved.length > 0) {
-      saveLocalData({ ...localData, started: true });
-      console.log("changed");
+    if (id !== localData.id) {
+      saveLocalData({
+        ...localData,
+        moves: NUM_MOVES,
+        solved: [],
+        recorded: false,
+        started: false,
+      });
     }
-  }, [state.solved]);
 
-  useEffect(() => {
     dispatch({
       type: "init",
       payload: {
@@ -78,13 +81,15 @@ const Home = ({ id, tracks, order }: HomeProps) => {
     if (id - localData.id > 1) {
       saveLocalData({ ...localData, streak: 0 });
     }
-
     saveLocalData({ ...localData, id: id });
   }, []);
 
   useEffect(() => {
     saveLocalData({ ...localData, moves: state.moves, solved: state.solved });
-  }, [state]);
+    if (!localData.started && state.solved.length > 0) {
+      saveLocalData({ ...localData, started: true });
+    }
+  }, [state.solved, state.moves]);
 
   const handleTileClick = (id: number) => {
     dispatch({ type: "tileClick", payload: id });
