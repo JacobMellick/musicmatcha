@@ -34,8 +34,12 @@ const Card = ({
       } items-center`}
     >
       <div className="pl-2 whitespace-nowrap">
-        <p className="w-[30ch] text-ellipsis overflow-hidden text-sm">
-          <a href={track_url} target="_blank">
+        <p className="w-[30ch] text-ellipsis overflow-hidden">
+          <a
+            href={track_url}
+            target="_blank"
+            className="text-gray-800 text-sm hover:underline"
+          >
             {name}
           </a>
         </p>

@@ -204,26 +204,6 @@ const Header = ({
                       <div className="text-xs">Streak</div>
                     </div>
                   </div>
-                  {showSolved && (
-                    <>
-                      <h3 className="text-md">Today&apos;s Songs Found</h3>
-                      <div className="pt-2 flex flex-col gap-2">
-                        {solved.map((card) => (
-                          <Card
-                            key={card.id}
-                            id={card.id}
-                            name={card.name}
-                            track_url={card.track_url}
-                            preview_url={card.preview_url}
-                            found={true}
-                            artists={card.artists}
-                            onClick={() => {}}
-                            playable={false}
-                          />
-                        ))}
-                      </div>
-                    </>
-                  )}
                 </Dialog.Panel>
               </Transition.Child>
             </div>

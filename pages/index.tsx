@@ -60,8 +60,11 @@ const Home = ({ id, tracks, order }: HomeProps) => {
 
   useEffect(() => {
     if (id !== localData.id) {
+      const streak = id - localData.id > 1 ? 0 : localData.streak;
       saveLocalData({
         ...localData,
+        id,
+        streak,
         moves: NUM_MOVES,
         solved: [],
         recorded: false,
@@ -77,18 +80,15 @@ const Home = ({ id, tracks, order }: HomeProps) => {
         moves: localData.moves,
       },
     });
-
-    if (id - localData.id > 1) {
-      saveLocalData({ ...localData, streak: 0 });
-    }
-    saveLocalData({ ...localData, id: id });
-  }, []);
+  }, [id, order]);
 
   useEffect(() => {
-    saveLocalData({ ...localData, moves: state.moves, solved: state.solved });
-    if (!localData.started && state.solved.length > 0) {
-      saveLocalData({ ...localData, started: true });
-    }
+    saveLocalData({
+      ...localData,
+      moves: state.moves,
+      solved: state.solved,
+      started: !localData.started && state.solved.length > 0,
+    });
   }, [state.solved, state.moves]);
 
   const handleTileClick = (id: number) => {
@@ -99,7 +99,7 @@ const Home = ({ id, tracks, order }: HomeProps) => {
     dispatch({ type: "cardClick", payload: id });
   };
 
-  const checkGameOver = () => {
+  useEffect(() => {
     if (
       state.moves === 0 ||
       (state.solved.length === state.tiles.length / 2 &&
@@ -107,9 +107,7 @@ const Home = ({ id, tracks, order }: HomeProps) => {
     ) {
       setGameOver(true);
     }
-  };
-
-  useEffect(() => checkGameOver(), [state.solved]);
+  }, [state.moves, state.solved, state.tiles]);
 
   useEffect(() => {
     if (!localData.recorded) {
@@ -178,7 +176,7 @@ const Home = ({ id, tracks, order }: HomeProps) => {
       />
       {!gameOver ? (
         <Page title="Home">
-          <div className="flex justify-center w-screen pt-8 sm:pt-0">
+          <div className="flex justify-center pt-8 sm:pt-0">
             <div className="grid grid-cols-4 gap-2 sm:gap-4 p-8 bg-neutral-100 rounded-lg">
               {state.tiles.map((tile, index) => {
                 let showTile = true;

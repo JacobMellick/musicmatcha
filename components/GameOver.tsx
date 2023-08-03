@@ -67,7 +67,7 @@ const GameOver = ({ tracks, solved, moves }: GameOverProps) => {
         </h2>
       )}
 
-      <div className="py-4 w-5/6 sm:w-3/6 lg:w-2/6 m-auto space-y-4">
+      <div className="py-4 w-5/6 sm:w-3/6 lg:w-2/6 m-auto space-y-2">
         {cards.map((card) => {
           let showCard = false;
           const tileTrack = JSON.stringify(card.track);
