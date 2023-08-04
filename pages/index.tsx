@@ -169,7 +169,6 @@ const Home = ({ id, tracks, order }: HomeProps) => {
       <Header
         started={localData.started}
         recorded={localData.recorded}
-        solved={localData.solved}
         wins={localData.wins}
         plays={localData.plays}
         streak={localData.streak}

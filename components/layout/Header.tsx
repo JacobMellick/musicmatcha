@@ -8,28 +8,18 @@ import { DEFAULT_TITLE } from "@/lib/constants";
 
 import { useState, Fragment, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { Track } from "@/types/proj01";
 
 type HeaderProps = {
   started: boolean;
   recorded: boolean;
-  solved: Track[];
   wins: number;
   plays: number;
   streak: number;
 };
 
-const Header = ({
-  started,
-  recorded,
-  solved,
-  wins,
-  plays,
-  streak,
-}: HeaderProps) => {
+const Header = ({ started, recorded, wins, plays, streak }: HeaderProps) => {
   let [infoModal, setInfoModal] = useState(false);
   let [statsModal, setStatsModal] = useState(false);
-  let [showSolved, setShowSolved] = useState(false);
 
   useEffect(() => {
     if (recorded) {
@@ -39,15 +29,19 @@ const Header = ({
     }
   }, []);
 
-  useEffect(() => {
-    if (solved.length !== 0) {
-      setShowSolved(true);
-    }
-  }, [statsModal]);
+  let audio = new Audio(
+    "https://p.scdn.co/mp3-preview/72ab5cf3b37ef6721d5abd9cf74748d3de5edffe?cid=b9f768253ec042088f3bcb2b250ca48c"
+  );
+
+  const start = () => {
+    audio.play();
+  };
 
   return (
     <div className="flex w-full flex-start p-4 shadow-sm justify-between mb-4">
-      <div className="text-green-500 font-bold">{DEFAULT_TITLE}</div>
+      <div className="text-green-500 font-bold" onClick={start}>
+        {DEFAULT_TITLE}
+      </div>
       <div className="flex space-x-2">
         <InformationCircleIcon
           height={24}
