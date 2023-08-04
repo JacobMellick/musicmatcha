@@ -8,7 +8,6 @@ import { DEFAULT_TITLE } from "@/lib/constants";
 
 import { useState, Fragment, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import Card from "../cards/Card";
 import { Track } from "@/types/proj01";
 
 type HeaderProps = {
