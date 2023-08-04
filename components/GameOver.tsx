@@ -84,7 +84,7 @@ const GameOver = ({ tracks, solved, moves }: GameOverProps) => {
               id={card.id}
               key={card.id}
               name={card.track.name}
-              preview_url={card.track.preview_url}
+              preview_url={card.track.preview_url || ""}
               track_url={card.track.track_url}
               artists={card.track.artists}
               found={showCard}
