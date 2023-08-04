@@ -60,23 +60,23 @@ export default function PlayerProvider({
   }, [currentTrack]);
 
   useEffect(() => {
-    const handlePlay = async () => {
+    const handlePlay = () => {
       if (currentTrackAudio) {
         setIsPlaying(true);
-        await currentTrackAudio.play();
+        currentTrackAudio.play();
       }
     };
     handlePlay();
   }, [currentTrackAudio]);
 
-  const togglePlay = async () => {
+  const togglePlay = () => {
     if (isPlaying) pause();
-    else await play();
+    else play();
   };
 
-  const play = async () => {
+  const play = () => {
     setIsPlaying(true);
-    await currentTrackAudio?.play();
+    currentTrackAudio?.play();
   };
 
   const pause = () => {
