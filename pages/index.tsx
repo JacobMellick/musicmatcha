@@ -215,7 +215,7 @@ const Home = ({ id, tracks, order }: HomeProps) => {
                 key={state.solved[0].name}
                 name={state.solved[0].name}
                 track_url={state.solved[0].track_url}
-                preview_url={state.solved[0].preview_url}
+                preview_url={state.solved[0].preview_url || ""}
                 artists={state.solved[0].artists}
                 onClick={handleCardClick}
                 isPlaying={
