@@ -97,10 +97,30 @@ const Home = ({ id, tracks, order }: HomeProps) => {
   }, [state.solved, state.moves]);
 
   const handleTileClick = (id: number) => {
+    if (
+      state.playingTile === id ||
+      (state.solved.length === 7 && state.selectedTiles.length === 1)
+    ) {
+      setCurrentTrack(null);
+    } else {
+      setCurrentTrack({
+        preview_url: state.tiles[id].track.preview_url,
+        startPct: state.tiles[id].startPct,
+        endPct: state.tiles[id].endPct,
+      });
+    }
     dispatch({ type: "tileClick", payload: id });
   };
 
   const handleCardClick = (id: string) => {
+    if (
+      state.playingCard === id ||
+      (state.solved.length === 7 && state.selectedTiles.length === 1)
+    ) {
+      setCurrentTrack(null);
+    } else {
+      setCurrentTrack({ preview_url: id, startPct: 0, endPct: 1 });
+    }
     dispatch({ type: "cardClick", payload: id });
   };
 
@@ -143,7 +163,7 @@ const Home = ({ id, tracks, order }: HomeProps) => {
     }
   }, [gameOver]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (
       typeof state.playingTile !== "undefined" &&
       state.moves > 0 &&
@@ -172,7 +192,7 @@ const Home = ({ id, tracks, order }: HomeProps) => {
     setCurrentTrack,
     gameOver,
     state.playingCard,
-  ]);
+  ]);*/
 
   return (
     <Layout>

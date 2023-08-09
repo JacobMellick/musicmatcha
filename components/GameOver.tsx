@@ -41,10 +41,6 @@ const GameOver = ({ tracks, solved, moves }: GameOverProps) => {
 
   const { setCurrentTrack, isPlaying } = usePlayer();
 
-  useEffect(() => {
-    setCurrentTrack(null);
-  }, []);
-
   return (
     <>
       {moves > 0 ? (
