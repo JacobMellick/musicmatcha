@@ -32,8 +32,10 @@ const GameOver = ({ tracks, solved, moves }: GameOverProps) => {
   const handleCardClick = (track_url: string) => {
     if (playingCard === track_url) {
       setPlayingCard("");
+      setCurrentTrack(null);
     } else {
       setPlayingCard(track_url);
+      setCurrentTrack({ preview_url: track_url, startPct: 0, endPct: 1 });
     }
   };
 
@@ -42,18 +44,6 @@ const GameOver = ({ tracks, solved, moves }: GameOverProps) => {
   useEffect(() => {
     setCurrentTrack(null);
   }, []);
-
-  useEffect(() => {
-    if (playingCard !== "") {
-      setCurrentTrack({
-        preview_url: playingCard,
-        startPct: 0,
-        endPct: 1,
-      });
-    } else {
-      setCurrentTrack(null);
-    }
-  }, [playingCard]);
 
   return (
     <>

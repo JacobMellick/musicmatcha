@@ -29,12 +29,12 @@ const Card = ({
 }: CardProps) => {
   return (
     <div
-      className={`flex rounded-2xl p-2 w-full justify-between ${
+      className={`flex rounded-2xl py-2 px-4 w-full justify-between ${
         found ? "bg-green-200" : "bg-red-200"
       } items-center`}
     >
       <div className="pl-2 whitespace-nowrap">
-        <p className="w-[30ch] text-ellipsis overflow-hidden">
+        <p className="w-[20ch] sm:w-[30ch] text-ellipsis overflow-hidden">
           <a
             href={track_url}
             target="_blank"
@@ -44,7 +44,7 @@ const Card = ({
           </a>
         </p>
 
-        <p className="w-[30ch] text-ellipsis overflow-hidden">
+        <p className="w-[20ch] sm:w-[30ch] text-ellipsis overflow-hidden">
           {artists.map((artist) => {
             if (artists.indexOf(artist) == artists.length - 1) {
               return (
