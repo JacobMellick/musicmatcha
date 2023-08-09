@@ -8,23 +8,25 @@ import { DEFAULT_TITLE } from "@/lib/constants";
 
 import { useState, Fragment, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { usePlayer } from "@/context/PlayerContext";
 
 type HeaderProps = {
-  started: boolean;
   recorded: boolean;
   wins: number;
   plays: number;
   streak: number;
 };
 
-const Header = ({ started, recorded, wins, plays, streak }: HeaderProps) => {
+const Header = ({ recorded, wins, plays, streak }: HeaderProps) => {
   let [infoModal, setInfoModal] = useState(false);
   let [statsModal, setStatsModal] = useState(false);
+
+  const { setCurrentTrack } = usePlayer();
 
   useEffect(() => {
     if (recorded) {
       setStatsModal(true);
-    } else if (!started) {
+    } else {
       setInfoModal(true);
     }
   }, []);
@@ -55,7 +57,15 @@ const Header = ({ started, recorded, wins, plays, streak }: HeaderProps) => {
         <Dialog
           as="div"
           className="relative z-10"
-          onClose={() => setInfoModal(false)}
+          onClose={() => {
+            setInfoModal(false);
+            setCurrentTrack({
+              preview_url:
+                "https://p.scdn.co/mp3-preview/154c02f5a6e1aeea748c887c0f1777670feec09b?cid=b9f768253ec042088f3bcb2b250ca48c",
+              startPct: 0,
+              endPct: 0.0001,
+            });
+          }}
         >
           <Transition.Child
             as={Fragment}
@@ -114,7 +124,15 @@ const Header = ({ started, recorded, wins, plays, streak }: HeaderProps) => {
                     <button
                       type="button"
                       className="inline-flex justify-center rounded-md border bg-green-100 px-4 py-2 text-sm font-medium text-green-900 hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
-                      onClick={() => setInfoModal(false)}
+                      onClick={() => {
+                        setInfoModal(false);
+                        setCurrentTrack({
+                          preview_url:
+                            "https://p.scdn.co/mp3-preview/154c02f5a6e1aeea748c887c0f1777670feec09b?cid=b9f768253ec042088f3bcb2b250ca48c",
+                          startPct: 0,
+                          endPct: 0.0001,
+                        });
+                      }}
                     >
                       Play
                     </button>
