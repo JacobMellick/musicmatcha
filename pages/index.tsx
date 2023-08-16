@@ -50,9 +50,6 @@ const Home = ({ id, tracks, order }: HomeProps) => {
     const localId = localStorage.getItem("id");
     const localParsed = localId ? JSON.parse(localId) : id;
 
-    console.log(localParsed);
-    console.log(id);
-
     let localState = getLocalGamestate();
     let localStats = getLocalGameStats();
     let localToChange = { ...localStats };
@@ -102,6 +99,15 @@ const Home = ({ id, tracks, order }: HomeProps) => {
       (state.solved.length === 7 && state.selectedTiles.length === 1)
     ) {
       setCurrentTrack(null);
+    } else if (
+      state.selectedTiles.length === 1 &&
+      state.tiles[id].track === state.tiles[state.selectedTiles[0]].track
+    ) {
+      setCurrentTrack({
+        preview_url: state.tiles[id].track.preview_url,
+        startPct: 0,
+        endPct: 1,
+      });
     } else {
       setCurrentTrack({
         preview_url: state.tiles[id].track.preview_url,
@@ -162,37 +168,6 @@ const Home = ({ id, tracks, order }: HomeProps) => {
       }
     }
   }, [gameOver]);
-
-  /*useEffect(() => {
-    if (
-      typeof state.playingTile !== "undefined" &&
-      state.moves > 0 &&
-      state.solved.length < 8
-    ) {
-      setCurrentTrack({
-        preview_url: state.tiles[state.playingTile].track.preview_url,
-        startPct: state.tiles[state.playingTile].startPct,
-        endPct: state.tiles[state.playingTile].endPct,
-      });
-    } else if (
-      typeof state.playingCard !== "undefined" &&
-      state.solved.length < 8
-    ) {
-      setCurrentTrack({
-        preview_url: state.playingCard,
-        startPct: 0,
-        endPct: 1,
-      });
-    } else {
-      setCurrentTrack(null);
-    }
-  }, [
-    state.playingTile,
-    state.tiles,
-    setCurrentTrack,
-    gameOver,
-    state.playingCard,
-  ]);*/
 
   return (
     <Layout>
