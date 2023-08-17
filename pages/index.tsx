@@ -203,7 +203,7 @@ const Home = ({ id, tracks, order }: HomeProps) => {
               })}
             </div>
           </div>
-          <div className="mt-8 flex justify-center items-center">
+          <div className="mt-4 flex justify-center items-center">
             <div
               className={`flex text-center justify-center items-center font-medium text-4xl text-green-500 bg-neutral-100 rounded-lg w-16 h-16`}
             >
