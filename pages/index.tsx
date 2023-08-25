@@ -26,12 +26,19 @@ type HomeProps = {
   order: number[];
 };
 
+const numberObj: {[key: number]: number} = {}
+
+for (let i = 16; i > 0; i-- ) {
+  numberObj[i] = 0
+}
+
 const Home = ({ id, tracks, order }: HomeProps) => {
   const [playerStats, setPlayerStats] = useState<GameStats>({
     plays: 0,
     wins: 0,
     streak: 0,
     recorded: false,
+    stats: numberObj
   });
 
   const [state, dispatch] = useReducer(reducer, {
@@ -162,6 +169,7 @@ const Home = ({ id, tracks, order }: HomeProps) => {
           plays: localStats.plays + 1,
           streak: localStats.streak + 1,
           recorded: true,
+          stats: {...localStats.stats, [state.moves]: localStats.stats[state.moves] + 1}
         };
         setLocalGameStats(winObj);
         setPlayerStats(winObj);
@@ -176,6 +184,7 @@ const Home = ({ id, tracks, order }: HomeProps) => {
         wins={playerStats.wins}
         plays={playerStats.plays}
         streak={playerStats.streak}
+        stats={playerStats.stats}
       />
       {!gameOver ? (
         <Page title="Home">

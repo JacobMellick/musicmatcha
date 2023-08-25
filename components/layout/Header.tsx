@@ -8,16 +8,18 @@ import { DEFAULT_TITLE } from "@/lib/constants";
 
 import { useState, Fragment, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { usePlayer } from "@/context/PlayerContext";
+
+import Chart from "@/components/Chart";
 
 type HeaderProps = {
   recorded: boolean;
   wins: number;
   plays: number;
   streak: number;
+  stats: {[key:number]: number}
 };
 
-const Header = ({ recorded, wins, plays, streak }: HeaderProps) => {
+const Header = ({ recorded, wins, plays, streak, stats }: HeaderProps) => {
   let [infoModal, setInfoModal] = useState(false);
   let [statsModal, setStatsModal] = useState(false);
 
@@ -102,10 +104,10 @@ const Header = ({ recorded, wins, plays, streak }: HeaderProps) => {
                   </p>
                   <div className="pt-2">
                     <p className="text-sm text-gray-500 mt-1">
-                      ⚠️- <span className="italic">THIS GAME PLAYS AUDIO</span>
+                    🔊 - <span className="italic">THIS GAME PLAYS AUDIO</span>
                     </p>
                     <p className="text-sm text-gray-500 mt-1">
-                      🗣️ -{" "}
+                    ⚠️ -{" "}
                       <span className="italic">
                         MAY CONTAIN EXPLICIT LYRICS
                       </span>
@@ -190,6 +192,8 @@ const Header = ({ recorded, wins, plays, streak }: HeaderProps) => {
                       <div className="text-xl">{streak}</div>
                       <div className="text-xs">Streak</div>
                     </div>
+                    <Chart stats={stats}
+                    />
                   </div>
                 </Dialog.Panel>
               </Transition.Child>

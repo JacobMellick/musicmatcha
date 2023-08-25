@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import type { Track } from "@/types/proj01";
 import { usePlayer } from "@/context/PlayerContext";
 
-import { NUM_MOVES } from "@/lib/constants";
 import Card from "@/components/cards/Card";
 
 type GameOverProps = {
@@ -45,7 +44,7 @@ const GameOver = ({ tracks, solved, moves }: GameOverProps) => {
     <>
       {moves > 0 ? (
         <h2 className="py-2 sm:p-0 font-bold text-gray-500 text-lg sm:text-xl text-center">
-          You finished today&apos;s puzzle in {NUM_MOVES - moves} moves!
+          You finished today&apos;s puzzle in with {moves} moves left!
         </h2>
       ) : (
         <h2 className="text-green-500 text-xl text-center font-bold">
