@@ -192,9 +192,10 @@ const Header = ({ recorded, wins, plays, streak, stats }: HeaderProps) => {
                       <div className="text-xl">{streak}</div>
                       <div className="text-xs">Streak</div>
                     </div>
-                    <Chart stats={stats}
-                    />
+                    
                   </div>
+                  <Chart stats={stats}
+                    />
                 </Dialog.Panel>
               </Transition.Child>
             </div>

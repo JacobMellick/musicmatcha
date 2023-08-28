@@ -110,11 +110,7 @@ const Home = ({ id, tracks, order }: HomeProps) => {
       state.selectedTiles.length === 1 &&
       state.tiles[id].track === state.tiles[state.selectedTiles[0]].track
     ) {
-      setCurrentTrack({
-        preview_url: state.tiles[id].track.preview_url,
-        startPct: 0,
-        endPct: 1,
-      });
+      setCurrentTrack(null);
     } else {
       setCurrentTrack({
         preview_url: state.tiles[id].track.preview_url,
