@@ -1,1 +1,122 @@
-{"id":286,"tracks":[{"id":"3CRDbSIZ4r5MsZ0YwxuEkn","name":"Stressed Out","track_url":"https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn","preview_url":"https://p.scdn.co/mp3-preview/d01bb6b4b9952d95d2609632474cda8e632e044d?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Twenty One Pilots","artist_url":"https://open.spotify.com/artist/3YQKmKGau1PzlVlkL1iodx"}],"loudness":-5.677},{"id":"5ruzrDWcT0vuJIOMW7gMnW","name":"The Adults Are Talking","track_url":"https://open.spotify.com/track/5ruzrDWcT0vuJIOMW7gMnW","preview_url":"https://p.scdn.co/mp3-preview/213afafcea2fa6b5c7e5fd71c1fd8f4adc3ffba0?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"The Strokes","artist_url":"https://open.spotify.com/artist/0epOFNiUfyON9EYx7Tpr6V"}],"loudness":-5.67},{"id":"1xzi1Jcr7mEi9K2RfzLOqS","name":"CUFF IT","track_url":"https://open.spotify.com/track/1xzi1Jcr7mEi9K2RfzLOqS","preview_url":"https://p.scdn.co/mp3-preview/1799de9ff42644af9773b6353358e54615696f19?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Beyoncé","artist_url":"https://open.spotify.com/artist/6vWDO969PvNqNYHIOW5v0m"}],"loudness":-5.668},{"id":"2RaA6kIcvomt77qlIgGhCT","name":"Breaking the Law","track_url":"https://open.spotify.com/track/2RaA6kIcvomt77qlIgGhCT","preview_url":"https://p.scdn.co/mp3-preview/2cb1d059304223a0ad3603e7f7d60dcfc6de3e7f?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Judas Priest","artist_url":"https://open.spotify.com/artist/2tRsMl4eGxwoNabM08Dm4I"}],"loudness":-5.664},{"id":"0fgZUSa7D7aVvv3GfO0A1n","name":"Post to Be (feat. Chris Brown & Jhene Aiko)","track_url":"https://open.spotify.com/track/0fgZUSa7D7aVvv3GfO0A1n","preview_url":"https://p.scdn.co/mp3-preview/6e46983bc460a046d738da248d7b9b22bfe2fae3?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Omarion","artist_url":"https://open.spotify.com/artist/0f5nVCcR06GX8Qikz0COtT"},{"name":"Chris Brown","artist_url":"https://open.spotify.com/artist/7bXgB6jMjp9ATFy66eO08Z"},{"name":"Jhené Aiko","artist_url":"https://open.spotify.com/artist/5ZS223C6JyBfXasXxrRqOk"}],"loudness":-5.655},{"id":"0ntQJM78wzOLVeCUAW7Y45","name":"Sex on Fire","track_url":"https://open.spotify.com/track/0ntQJM78wzOLVeCUAW7Y45","preview_url":"https://p.scdn.co/mp3-preview/6806855988e246016413cc8a34a2afe862f3988d?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Kings of Leon","artist_url":"https://open.spotify.com/artist/2qk9voo8llSGYcZ6xrBzKx"}],"loudness":-5.653},{"id":"6KI1ZpZWYAJLvmVhCJz65G","name":"You Don't Own Me (feat. G-Eazy)","track_url":"https://open.spotify.com/track/6KI1ZpZWYAJLvmVhCJz65G","preview_url":"https://p.scdn.co/mp3-preview/9785baec65ed15f1f4e6acd5c2bd32558090b313?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"SAYGRACE","artist_url":"https://open.spotify.com/artist/6y5amJcTjeDgLXIjtQLMst"},{"name":"G-Eazy","artist_url":"https://open.spotify.com/artist/02kJSzxNuaWGqwubyUba0Z"}],"loudness":-5.653},{"id":"1Ug5wxoHthwxctyWTUMGta","name":"1901","track_url":"https://open.spotify.com/track/1Ug5wxoHthwxctyWTUMGta","preview_url":"https://p.scdn.co/mp3-preview/51f9b6a2218009fa259e44b6ba944744f44c0f37?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Phoenix","artist_url":"https://open.spotify.com/artist/1xU878Z1QtBldR7ru9owdU"}],"loudness":-5.649}],"order":[11,14,9,5,10,2,13,1,4,8,0,7,15,6,3,12]}
+{
+  "id": 286,
+  "tracks": [
+    {
+      "id": "3CRDbSIZ4r5MsZ0YwxuEkn",
+      "name": "Stressed Out",
+      "track_url": "https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn",
+      "preview_url": "https://p.scdn.co/mp3-preview/d01bb6b4b9952d95d2609632474cda8e632e044d?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Twenty One Pilots",
+          "artist_url": "https://open.spotify.com/artist/3YQKmKGau1PzlVlkL1iodx"
+        }
+      ],
+      "loudness": -5.677
+    },
+    {
+      "id": "5ruzrDWcT0vuJIOMW7gMnW",
+      "name": "The Adults Are Talking",
+      "track_url": "https://open.spotify.com/track/5ruzrDWcT0vuJIOMW7gMnW",
+      "preview_url": "https://p.scdn.co/mp3-preview/213afafcea2fa6b5c7e5fd71c1fd8f4adc3ffba0?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "The Strokes",
+          "artist_url": "https://open.spotify.com/artist/0epOFNiUfyON9EYx7Tpr6V"
+        }
+      ],
+      "loudness": -5.67
+    },
+    {
+      "id": "1xzi1Jcr7mEi9K2RfzLOqS",
+      "name": "CUFF IT",
+      "track_url": "https://open.spotify.com/track/1xzi1Jcr7mEi9K2RfzLOqS",
+      "preview_url": "https://p.scdn.co/mp3-preview/1799de9ff42644af9773b6353358e54615696f19?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Beyoncé",
+          "artist_url": "https://open.spotify.com/artist/6vWDO969PvNqNYHIOW5v0m"
+        }
+      ],
+      "loudness": -5.668
+    },
+    {
+      "id": "2RaA6kIcvomt77qlIgGhCT",
+      "name": "Breaking the Law",
+      "track_url": "https://open.spotify.com/track/2RaA6kIcvomt77qlIgGhCT",
+      "preview_url": "https://p.scdn.co/mp3-preview/2cb1d059304223a0ad3603e7f7d60dcfc6de3e7f?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Judas Priest",
+          "artist_url": "https://open.spotify.com/artist/2tRsMl4eGxwoNabM08Dm4I"
+        }
+      ],
+      "loudness": -5.664
+    },
+    {
+      "id": "0fgZUSa7D7aVvv3GfO0A1n",
+      "name": "Post to Be (feat. Chris Brown & Jhene Aiko)",
+      "track_url": "https://open.spotify.com/track/0fgZUSa7D7aVvv3GfO0A1n",
+      "preview_url": "https://p.scdn.co/mp3-preview/6e46983bc460a046d738da248d7b9b22bfe2fae3?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Omarion",
+          "artist_url": "https://open.spotify.com/artist/0f5nVCcR06GX8Qikz0COtT"
+        },
+        {
+          "name": "Chris Brown",
+          "artist_url": "https://open.spotify.com/artist/7bXgB6jMjp9ATFy66eO08Z"
+        },
+        {
+          "name": "Jhené Aiko",
+          "artist_url": "https://open.spotify.com/artist/5ZS223C6JyBfXasXxrRqOk"
+        }
+      ],
+      "loudness": -5.655
+    },
+    {
+      "id": "0ntQJM78wzOLVeCUAW7Y45",
+      "name": "Sex on Fire",
+      "track_url": "https://open.spotify.com/track/0ntQJM78wzOLVeCUAW7Y45",
+      "preview_url": "https://p.scdn.co/mp3-preview/6806855988e246016413cc8a34a2afe862f3988d?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Kings of Leon",
+          "artist_url": "https://open.spotify.com/artist/2qk9voo8llSGYcZ6xrBzKx"
+        }
+      ],
+      "loudness": -5.653
+    },
+    {
+      "id": "6KI1ZpZWYAJLvmVhCJz65G",
+      "name": "You Don't Own Me (feat. G-Eazy)",
+      "track_url": "https://open.spotify.com/track/6KI1ZpZWYAJLvmVhCJz65G",
+      "preview_url": "https://p.scdn.co/mp3-preview/9785baec65ed15f1f4e6acd5c2bd32558090b313?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "SAYGRACE",
+          "artist_url": "https://open.spotify.com/artist/6y5amJcTjeDgLXIjtQLMst"
+        },
+        {
+          "name": "G-Eazy",
+          "artist_url": "https://open.spotify.com/artist/02kJSzxNuaWGqwubyUba0Z"
+        }
+      ],
+      "loudness": -5.653
+    },
+    {
+      "id": "1Ug5wxoHthwxctyWTUMGta",
+      "name": "1901",
+      "track_url": "https://open.spotify.com/track/1Ug5wxoHthwxctyWTUMGta",
+      "preview_url": "https://p.scdn.co/mp3-preview/51f9b6a2218009fa259e44b6ba944744f44c0f37?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Phoenix",
+          "artist_url": "https://open.spotify.com/artist/1xU878Z1QtBldR7ru9owdU"
+        }
+      ],
+      "loudness": -5.649
+    }
+  ],
+  "order": [11, 14, 9, 5, 10, 2, 13, 1, 4, 8, 0, 7, 15, 6, 3, 12]
+}
