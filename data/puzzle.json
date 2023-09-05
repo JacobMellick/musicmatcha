@@ -1,106 +1,114 @@
 {
-  "id": 12,
+  "id": 187,
   "tracks": [
     {
-      "id": "0bPiyfCmBIWqDDQZ6KqFXu",
-      "name": "Change",
-      "track_url": "https://open.spotify.com/track/0bPiyfCmBIWqDDQZ6KqFXu",
-      "preview_url": "https://p.scdn.co/mp3-preview/154c02f5a6e1aeea748c887c0f1777670feec09b?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "id": "7fhimI5b7TpkyZ99X7R51o",
+      "name": "Vincent",
+      "track_url": "https://open.spotify.com/track/7fhimI5b7TpkyZ99X7R51o",
+      "preview_url": "https://p.scdn.co/mp3-preview/c69fbefcab5d290cdd017cd6034485fb0350fc4c?cid=b9f768253ec042088f3bcb2b250ca48c",
       "artists": [
         {
-          "name": "Alex G",
-          "artist_url": "https://open.spotify.com/artist/6lcwlkAjBPSKnFBZjjZFJs"
+          "name": "Car Seat Headrest",
+          "artist_url": "https://open.spotify.com/artist/5PbpKlxQE0Ktl5lcNABoFf"
         }
-      ]
+      ],
+      "loudness": -7.836
     },
     {
-      "id": "4rcHWl68ai6KvpXlc8vbnE",
-      "name": "Keep on Loving You",
-      "track_url": "https://open.spotify.com/track/4rcHWl68ai6KvpXlc8vbnE",
-      "preview_url": "https://p.scdn.co/mp3-preview/3cdad676ebe5f7b2ff03b781834d7e596c279fe5?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "id": "0AQquaENerGps8BQmbPw14",
+      "name": "Big Iron",
+      "track_url": "https://open.spotify.com/track/0AQquaENerGps8BQmbPw14",
+      "preview_url": "https://p.scdn.co/mp3-preview/b80beb7f651dd44d498e70082e57bd7a96f9fe7d?cid=b9f768253ec042088f3bcb2b250ca48c",
       "artists": [
         {
-          "name": "REO Speedwagon",
-          "artist_url": "https://open.spotify.com/artist/55vs7NT1KxcFjbMC4y202E"
+          "name": "Marty Robbins",
+          "artist_url": "https://open.spotify.com/artist/0Xi59sEw38vRvwleSAVqoo"
         }
-      ]
+      ],
+      "loudness": -7.834
     },
     {
-      "id": "22sLuJYcvZOSoLLRYev1s5",
-      "name": "Material Girl",
-      "track_url": "https://open.spotify.com/track/22sLuJYcvZOSoLLRYev1s5",
-      "preview_url": "https://p.scdn.co/mp3-preview/e603c1b78ec2fb02062ff0d1f48475f33c45fe8a?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "id": "4NYwy0R3NdvORX2B6OZXBT",
+      "name": "Slow Motion",
+      "track_url": "https://open.spotify.com/track/4NYwy0R3NdvORX2B6OZXBT",
+      "preview_url": "https://p.scdn.co/mp3-preview/e12dd576fd9e9ab49adc07819c188dbc6ea45576?cid=b9f768253ec042088f3bcb2b250ca48c",
       "artists": [
         {
-          "name": "Madonna",
-          "artist_url": "https://open.spotify.com/artist/6tbjWDEIzxoDsBA1FuhfPW"
+          "name": "Trey Songz",
+          "artist_url": "https://open.spotify.com/artist/2iojnBLj0qIMiKPvVhLnsH"
         }
-      ]
+      ],
+      "loudness": -7.834
     },
     {
-      "id": "2a5qaGUrVHWAIrh0xmTADM",
-      "name": "neve give up",
-      "track_url": "https://open.spotify.com/track/2a5qaGUrVHWAIrh0xmTADM",
-      "preview_url": "https://p.scdn.co/mp3-preview/c2d1319ead97d66cafceabfba4416a7b56ac4c48?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "id": "4Ymk3pqpkGx19gyxxUj5LK",
+      "name": "Ain't No Stoppin' Us Now",
+      "track_url": "https://open.spotify.com/track/4Ymk3pqpkGx19gyxxUj5LK",
+      "preview_url": "https://p.scdn.co/mp3-preview/6835efa24c6eab6aad9b5c4eba3eec378ec6f5d9?cid=b9f768253ec042088f3bcb2b250ca48c",
       "artists": [
         {
-          "name": "Son Little",
-          "artist_url": "https://open.spotify.com/artist/4lujUKeO6nQAJXpq37Epn7"
+          "name": "McFadden & Whitehead",
+          "artist_url": "https://open.spotify.com/artist/3iQM78Xg0wJnGZhgVNLPmY"
         }
-      ]
+      ],
+      "loudness": -7.83
     },
     {
-      "id": "2B98ljvzqpCVgt5reTHq28",
-      "name": "Better Man",
-      "track_url": "https://open.spotify.com/track/2B98ljvzqpCVgt5reTHq28",
-      "preview_url": "https://p.scdn.co/mp3-preview/84e4fa43f4954d2c1a89bd6921cdc3c937cb29d8?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "id": "3DdBQIpZ8gx7Zph2uUyKry",
+      "name": "Something New",
+      "track_url": "https://open.spotify.com/track/3DdBQIpZ8gx7Zph2uUyKry",
+      "preview_url": "https://p.scdn.co/mp3-preview/2d0d1e4000cbc6d80caccab36519d99ce69219ed?cid=b9f768253ec042088f3bcb2b250ca48c",
       "artists": [
         {
-          "name": "Pearl Jam",
-          "artist_url": "https://open.spotify.com/artist/1w5Kfo2jwwIPruYS2UWh56"
-        }
-      ]
-    },
-    {
-      "id": "0MGB4tU2Ufvv4r6IiOEyCd",
-      "name": "Makeba - Dirty Ridin' Remix",
-      "track_url": "https://open.spotify.com/track/0MGB4tU2Ufvv4r6IiOEyCd",
-      "preview_url": "https://p.scdn.co/mp3-preview/968c2fd5487f53541ac493077b0e8b82389fef4b?cid=b9f768253ec042088f3bcb2b250ca48c",
-      "artists": [
-        {
-          "name": "Jain",
-          "artist_url": "https://open.spotify.com/artist/2HHmvvSQ44ePDH7IKVzgK0"
-        }
-      ]
-    },
-    {
-      "id": "1DrlLvlYd1FIjNavRm6NdX",
-      "name": "Back Pocket",
-      "track_url": "https://open.spotify.com/track/1DrlLvlYd1FIjNavRm6NdX",
-      "preview_url": "https://p.scdn.co/mp3-preview/f86e48fc454e583a1954873a4819629219748c47?cid=b9f768253ec042088f3bcb2b250ca48c",
-      "artists": [
-        {
-          "name": "Vulfpeck",
-          "artist_url": "https://open.spotify.com/artist/7pXu47GoqSYRajmBCjxdD6"
+          "name": "SiR",
+          "artist_url": "https://open.spotify.com/artist/3QTDHixorJelOLxoxcjqGx"
         },
         {
-          "name": "Vulf",
-          "artist_url": "https://open.spotify.com/artist/1kkjXmcMmibTegsw0JtDwv"
+          "name": "Etta Bond",
+          "artist_url": "https://open.spotify.com/artist/0zanHkxN0P38oWegA8iSQA"
         }
-      ]
+      ],
+      "loudness": -7.827
     },
     {
-      "id": "2L93TdW2GMue1H2zlkt30F",
-      "name": "Suzanne",
-      "track_url": "https://open.spotify.com/track/2L93TdW2GMue1H2zlkt30F",
-      "preview_url": "https://p.scdn.co/mp3-preview/6d0ce6d733b98ed2c5b5fefbd7b1398cb823f917?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "id": "5FkoSXiJPKTNyYgALRJFhD",
+      "name": "ORANGE SODA",
+      "track_url": "https://open.spotify.com/track/5FkoSXiJPKTNyYgALRJFhD",
+      "preview_url": "https://p.scdn.co/mp3-preview/16036f2f4b872f58b00af7696e802883c79ae84e?cid=b9f768253ec042088f3bcb2b250ca48c",
       "artists": [
         {
-          "name": "Leonard Cohen",
-          "artist_url": "https://open.spotify.com/artist/5l8VQNuIg0turYE1VtM9zV"
+          "name": "Baby Keem",
+          "artist_url": "https://open.spotify.com/artist/5SXuuuRpukkTvsLuUknva1"
         }
-      ]
+      ],
+      "loudness": -7.822
+    },
+    {
+      "id": "4SlCb8n5Jw52astU7GWPyV",
+      "name": "Somebody's Baby",
+      "track_url": "https://open.spotify.com/track/4SlCb8n5Jw52astU7GWPyV",
+      "preview_url": "https://p.scdn.co/mp3-preview/3607c01e24d211f4b1e4f652b060fbd0b074e72d?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Jackson Browne",
+          "artist_url": "https://open.spotify.com/artist/5lkiCO9UQ8B23dZ1o0UV4m"
+        }
+      ],
+      "loudness": -7.822
+    },
+    {
+      "id": "5cbQEDDCUbFszvA1L4ENpc",
+      "name": "The Glamorous Life - Re-Recorded",
+      "track_url": "https://open.spotify.com/track/5cbQEDDCUbFszvA1L4ENpc",
+      "preview_url": "https://p.scdn.co/mp3-preview/b051f384c8e97acc71b5b1f7a706d62a171ccab6?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Sheila E.",
+          "artist_url": "https://open.spotify.com/artist/6OQrOpxSIfPai3cFaN4v4P"
+        }
+      ],
+      "loudness": -7.818
     }
   ],
-  "order": [1, 11, 13, 4, 5, 9, 8, 7, 3, 2, 10, 12, 15, 6, 14, 0]
+  "order": [9, 10, 7, 0, 1, 11, 3, 14, 12, 6, 15, 5, 2, 8, 13, 4]
 }
