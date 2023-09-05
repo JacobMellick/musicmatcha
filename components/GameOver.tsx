@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import type { Track } from "@/types/proj01";
 import { usePlayer } from "@/context/PlayerContext";
 
-import { NUM_MOVES } from "@/lib/constants";
 import Card from "@/components/cards/Card";
 
 type GameOverProps = {
@@ -32,34 +31,20 @@ const GameOver = ({ tracks, solved, moves }: GameOverProps) => {
   const handleCardClick = (track_url: string) => {
     if (playingCard === track_url) {
       setPlayingCard("");
+      setCurrentTrack(null);
     } else {
       setPlayingCard(track_url);
+      setCurrentTrack({ preview_url: track_url, startPct: 0, endPct: 1 });
     }
   };
 
   const { setCurrentTrack, isPlaying } = usePlayer();
 
-  useEffect(() => {
-    setCurrentTrack(null);
-  }, []);
-
-  useEffect(() => {
-    if (playingCard !== "") {
-      setCurrentTrack({
-        preview_url: playingCard,
-        startPct: 0,
-        endPct: 1,
-      });
-    } else {
-      setCurrentTrack(null);
-    }
-  }, [playingCard]);
-
   return (
     <>
       {moves > 0 ? (
         <h2 className="py-2 sm:p-0 font-bold text-gray-500 text-lg sm:text-xl text-center">
-          You finished today&apos;s puzzle in {NUM_MOVES - moves} moves!
+          You finished today&apos;s puzzle in with {moves} moves left!
         </h2>
       ) : (
         <h2 className="text-green-500 text-xl text-center font-bold">
@@ -84,7 +69,7 @@ const GameOver = ({ tracks, solved, moves }: GameOverProps) => {
               id={card.id}
               key={card.id}
               name={card.track.name}
-              preview_url={card.track.preview_url}
+              preview_url={card.track.preview_url || ""}
               track_url={card.track.track_url}
               artists={card.track.artists}
               found={showCard}

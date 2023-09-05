@@ -19,7 +19,7 @@ type State = {
   }[];
   selectedTiles: number[];
   playingTile?: number;
-  playingCard?: string | undefined;
+  playingCard?: string | null;
   moves: number;
   solved: Track[];
 };
@@ -74,7 +74,6 @@ export const reducer = (state: State, action: Action): State => {
       let removeTiles: number[] = [];
       let solved: Track[] = [...state.solved];
       let moves = state.moves;
-      let playingCard: string | undefined;
 
       if (clickedTile == state.playingTile) {
         playingTile = undefined;
@@ -102,14 +101,12 @@ export const reducer = (state: State, action: Action): State => {
         removeTiles = [...selectedTiles];
         solved = [state.tiles[selectedTiles[0]].track, ...solved];
         selectedTiles = [];
-        playingCard = solved[0].preview_url;
 
         moves++;
       }
 
       return {
         ...state,
-        playingCard,
         selectedTiles: [...selectedTiles],
         playingTile,
         moves,

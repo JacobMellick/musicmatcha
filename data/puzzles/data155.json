@@ -1,0 +1,110 @@
+{
+  "id": 155,
+  "tracks": [
+    {
+      "id": "2rd4FH1cSaWGc0ZiUaMbX9",
+      "name": "Lover Boy",
+      "track_url": "https://open.spotify.com/track/2rd4FH1cSaWGc0ZiUaMbX9",
+      "preview_url": "https://p.scdn.co/mp3-preview/48f5ebeb908f7710bfb604508b042392da95c99a?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Phum Viphurit",
+          "artist_url": "https://open.spotify.com/artist/5mqguTgtaoCMNMZD6txCh6"
+        }
+      ],
+      "loudness": -8.597
+    },
+    {
+      "id": "4RW7ZNXnCls8EX0w7pTdgN",
+      "name": "Giant Black Shadow",
+      "track_url": "https://open.spotify.com/track/4RW7ZNXnCls8EX0w7pTdgN",
+      "preview_url": "https://p.scdn.co/mp3-preview/deb6d6010b6be79c79e84688bea38448e51dee6b?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Quasimode",
+          "artist_url": "https://open.spotify.com/artist/5vLyvkGLk9d9hp9LRQ8RqD"
+        }
+      ],
+      "loudness": -8.597
+    },
+    {
+      "id": "4ShVovnLIlObG43vwaCRkJ",
+      "name": "Basketball Shoes",
+      "track_url": "https://open.spotify.com/track/4ShVovnLIlObG43vwaCRkJ",
+      "preview_url": "https://p.scdn.co/mp3-preview/e947ee4accc94852078f8058518fd8dec337df54?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Black Country, New Road",
+          "artist_url": "https://open.spotify.com/artist/3PP6ghmOlDl2jaKaH0avUN"
+        }
+      ],
+      "loudness": -8.585
+    },
+    {
+      "id": "10vkYRKw6Jjr7try1ir50G",
+      "name": "Tired of Being Alone",
+      "track_url": "https://open.spotify.com/track/10vkYRKw6Jjr7try1ir50G",
+      "preview_url": "https://p.scdn.co/mp3-preview/ede61086d1b33613da862ba3f33fdc1caf398b84?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Al Green",
+          "artist_url": "https://open.spotify.com/artist/3dkbV4qihUeMsqN4vBGg93"
+        }
+      ],
+      "loudness": -8.585
+    },
+    {
+      "id": "5ZPZgrZRGoWS8Yv66zUx4J",
+      "name": "Said It Again",
+      "track_url": "https://open.spotify.com/track/5ZPZgrZRGoWS8Yv66zUx4J",
+      "preview_url": "https://p.scdn.co/mp3-preview/76fcb76f33161d0f7fdf809d970b7a81dd94d4bd?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Isola",
+          "artist_url": "https://open.spotify.com/artist/2K9NaV3uzFi6NAZCRHeZvh"
+        }
+      ],
+      "loudness": -8.581
+    },
+    {
+      "id": "0nNY7kR1TjRcZYAMi08rCy",
+      "name": "Pray Everyday (Survivor's Guilt)",
+      "track_url": "https://open.spotify.com/track/0nNY7kR1TjRcZYAMi08rCy",
+      "preview_url": "https://p.scdn.co/mp3-preview/7af48a7a78fc7e6ab917401c4ec51e55125ac6a2?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "GoldLink",
+          "artist_url": "https://open.spotify.com/artist/5XenQ7XfcvQdfIbpLEFaKQ"
+        }
+      ],
+      "loudness": -8.58
+    },
+    {
+      "id": "1Jmqubf9kGkWeYQXQKImL5",
+      "name": "People Are Strange",
+      "track_url": "https://open.spotify.com/track/1Jmqubf9kGkWeYQXQKImL5",
+      "preview_url": "https://p.scdn.co/mp3-preview/76f1624dd8ad1c3741cacbc8864746d734f92109?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "The Doors",
+          "artist_url": "https://open.spotify.com/artist/22WZ7M8sxp5THdruNY3gXt"
+        }
+      ],
+      "loudness": -8.578
+    },
+    {
+      "id": "17TCTYGxieVPS1TBTUdQkc",
+      "name": "Jaws",
+      "track_url": "https://open.spotify.com/track/17TCTYGxieVPS1TBTUdQkc",
+      "preview_url": "https://p.scdn.co/mp3-preview/1634e739644cf3e7337bc7b2540955c3ed7857b7?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "yunè pinku",
+          "artist_url": "https://open.spotify.com/artist/2sY4BbYrbvNVgsNzo6HddD"
+        }
+      ],
+      "loudness": -8.577
+    }
+  ],
+  "order": [2, 14, 5, 6, 15, 3, 12, 10, 8, 0, 13, 4, 11, 9, 1, 7]
+}

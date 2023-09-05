@@ -9,10 +9,16 @@ import { reducer } from "@/components/reducers/game";
 import Tile from "@/components/Tile";
 import { usePlayer } from "@/context/PlayerContext";
 import Puzzle from "@/data/puzzle.json";
-import useLocalStorage from "@/hooks/useLocalStorage";
 import { NUM_MOVES } from "@/lib/constants";
 
 import type { Track } from "@/types/proj01";
+import {
+  getLocalGamestate,
+  setLocalGamestate,
+  getLocalGameStats,
+  setLocalGameStats,
+  GameStats,
+} from "@/lib/localStorage";
 
 type HomeProps = {
   id: number;
@@ -20,32 +26,21 @@ type HomeProps = {
   order: number[];
 };
 
-interface LocalDataLayout {
-  id: number;
-  moves: number;
-  solved: Track[];
-  streak: number;
-  plays: number;
-  wins: number;
-  recorded: boolean;
-  started: boolean;
-  [key: string]: unknown;
+const numberObj: {[key: number]: number} = {}
+
+for (let i = 16; i > 0; i-- ) {
+  numberObj[i] = 0
 }
 
 const Home = ({ id, tracks, order }: HomeProps) => {
-  const [localData, saveLocalData] = useLocalStorage<LocalDataLayout>(
-    "musicmatcha",
-    {
-      id: id,
-      moves: NUM_MOVES,
-      solved: [],
-      streak: 0,
-      plays: 0,
-      wins: 0,
-      recorded: false,
-      started: false,
-    }
-  );
+  const [playerStats, setPlayerStats] = useState<GameStats>({
+    plays: 0,
+    wins: 0,
+    streak: 0,
+    recorded: false,
+    stats: numberObj
+  });
+
   const [state, dispatch] = useReducer(reducer, {
     tracks,
     tiles: [],
@@ -59,43 +54,82 @@ const Home = ({ id, tracks, order }: HomeProps) => {
   const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
-    if (id !== localData.id) {
-      const streak = id - localData.id > 1 ? 0 : localData.streak;
-      saveLocalData({
-        ...localData,
-        id,
-        streak,
+    const localId = localStorage.getItem("id");
+    const localParsed = localId ? JSON.parse(localId) : id;
+
+    let localState = getLocalGamestate();
+    let localStats = getLocalGameStats();
+    let localToChange = { ...localStats };
+
+    if (id !== localParsed) {
+      console.log("newPuzzle");
+      const streak = id - localParsed > 1 ? 0 : localStats.streak;
+      setLocalGamestate({
         moves: NUM_MOVES,
         solved: [],
-        recorded: false,
-        started: false,
       });
+      setLocalGameStats({
+        ...localStats,
+        streak,
+        recorded: false,
+      });
+      localToChange = { ...localStats, streak, recorded: false };
     }
+
+    localState = getLocalGamestate();
+    localStats = getLocalGameStats();
 
     dispatch({
       type: "init",
       payload: {
         order: order,
-        solved: localData.solved,
-        moves: localData.moves,
+        solved: localState.solved,
+        moves: localState.moves,
       },
     });
-  }, [id, order]);
+
+    localStorage.setItem("id", JSON.stringify(id));
+
+    setPlayerStats({ ...localToChange });
+  }, []);
 
   useEffect(() => {
-    saveLocalData({
-      ...localData,
+    setLocalGamestate({
       moves: state.moves,
       solved: state.solved,
-      started: !localData.started && state.solved.length > 0,
     });
   }, [state.solved, state.moves]);
 
   const handleTileClick = (id: number) => {
+    if (
+      state.playingTile === id ||
+      (state.solved.length === 7 && state.selectedTiles.length === 1)
+    ) {
+      setCurrentTrack(null);
+    } else if (
+      state.selectedTiles.length === 1 &&
+      state.tiles[id].track === state.tiles[state.selectedTiles[0]].track
+    ) {
+      setCurrentTrack(null);
+    } else {
+      setCurrentTrack({
+        preview_url: state.tiles[id].track.preview_url,
+        startPct: state.tiles[id].startPct,
+        endPct: state.tiles[id].endPct,
+      });
+    }
     dispatch({ type: "tileClick", payload: id });
   };
 
   const handleCardClick = (id: string) => {
+    if (
+      state.playingCard === id ||
+      (state.solved.length === 7 && state.selectedTiles.length === 1)
+    ) {
+      setCurrentTrack(null);
+    } else {
+      setCurrentTrack({ preview_url: id, startPct: 0, endPct: 1 });
+    }
     dispatch({ type: "cardClick", payload: id });
   };
 
@@ -110,69 +144,43 @@ const Home = ({ id, tracks, order }: HomeProps) => {
   }, [state.moves, state.solved, state.tiles]);
 
   useEffect(() => {
-    if (!localData.recorded) {
+    const localStats = getLocalGameStats();
+
+    if (!localStats.recorded) {
       if (state.moves === 0) {
-        saveLocalData({
-          ...localData,
-          plays: localData.plays + 1,
+        const loseObj = {
+          ...localStats,
+          plays: localStats.plays + 1,
           recorded: true,
-          streak: 0,
-        });
+        };
+        setLocalGameStats(loseObj);
+        setPlayerStats(loseObj);
       } else if (
         state.solved.length === state.tiles.length / 2 &&
         state.solved.length !== 0
       ) {
-        saveLocalData({
-          ...localData,
-          plays: localData.plays + 1,
-          wins: localData.wins + 1,
-          streak: localData.streak + 1,
+        const winObj = {
+          ...localStats,
+          wins: localStats.wins + 1,
+          plays: localStats.plays + 1,
+          streak: localStats.streak + 1,
           recorded: true,
-        });
+          stats: {...localStats.stats, [state.moves]: localStats.stats[state.moves] + 1}
+        };
+        setLocalGameStats(winObj);
+        setPlayerStats(winObj);
       }
     }
   }, [gameOver]);
 
-  useEffect(() => {
-    if (
-      typeof state.playingTile !== "undefined" &&
-      state.moves > 0 &&
-      state.solved.length < 8
-    ) {
-      setCurrentTrack({
-        preview_url: state.tiles[state.playingTile].track.preview_url,
-        startPct: state.tiles[state.playingTile].startPct,
-        endPct: state.tiles[state.playingTile].endPct,
-      });
-    } else if (
-      typeof state.playingCard !== "undefined" &&
-      state.solved.length < 8
-    ) {
-      setCurrentTrack({
-        preview_url: state.playingCard,
-        startPct: 0,
-        endPct: 1,
-      });
-    } else {
-      setCurrentTrack(null);
-    }
-  }, [
-    state.playingTile,
-    state.tiles,
-    setCurrentTrack,
-    gameOver,
-    state.playingCard,
-  ]);
-
   return (
     <Layout>
       <Header
-        started={localData.started}
-        recorded={localData.recorded}
-        solved={localData.solved}
-        wins={localData.wins}
-        plays={localData.plays}
-        streak={localData.streak}
+        recorded={playerStats.recorded}
+        wins={playerStats.wins}
+        plays={playerStats.plays}
+        streak={playerStats.streak}
+        stats={playerStats.stats}
       />
       {!gameOver ? (
         <Page title="Home">
@@ -200,7 +208,7 @@ const Home = ({ id, tracks, order }: HomeProps) => {
               })}
             </div>
           </div>
-          <div className="mt-8 flex justify-center items-center">
+          <div className="mt-4 flex justify-center items-center">
             <div
               className={`flex text-center justify-center items-center font-medium text-4xl text-green-500 bg-neutral-100 rounded-lg w-16 h-16`}
             >
@@ -215,7 +223,7 @@ const Home = ({ id, tracks, order }: HomeProps) => {
                 key={state.solved[0].name}
                 name={state.solved[0].name}
                 track_url={state.solved[0].track_url}
-                preview_url={state.solved[0].preview_url}
+                preview_url={state.solved[0].preview_url || ""}
                 artists={state.solved[0].artists}
                 onClick={handleCardClick}
                 isPlaying={

@@ -8,43 +8,28 @@ import { DEFAULT_TITLE } from "@/lib/constants";
 
 import { useState, Fragment, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import Card from "../cards/Card";
-import { Track } from "@/types/proj01";
+
+import Chart from "@/components/Chart";
 
 type HeaderProps = {
-  started: boolean;
   recorded: boolean;
-  solved: Track[];
   wins: number;
   plays: number;
   streak: number;
+  stats: {[key:number]: number}
 };
 
-const Header = ({
-  started,
-  recorded,
-  solved,
-  wins,
-  plays,
-  streak,
-}: HeaderProps) => {
+const Header = ({ recorded, wins, plays, streak, stats }: HeaderProps) => {
   let [infoModal, setInfoModal] = useState(false);
   let [statsModal, setStatsModal] = useState(false);
-  let [showSolved, setShowSolved] = useState(false);
 
   useEffect(() => {
     if (recorded) {
       setStatsModal(true);
-    } else if (!started) {
+    } else {
       setInfoModal(true);
     }
   }, []);
-
-  useEffect(() => {
-    if (solved.length !== 0) {
-      setShowSolved(true);
-    }
-  }, [statsModal]);
 
   return (
     <div className="flex w-full flex-start p-4 shadow-sm justify-between mb-4">
@@ -72,7 +57,9 @@ const Header = ({
         <Dialog
           as="div"
           className="relative z-10"
-          onClose={() => setInfoModal(false)}
+          onClose={() => {
+            setInfoModal(false);
+          }}
         >
           <Transition.Child
             as={Fragment}
@@ -117,10 +104,10 @@ const Header = ({
                   </p>
                   <div className="pt-2">
                     <p className="text-sm text-gray-500 mt-1">
-                      ⚠️- <span className="italic">THIS GAME PLAYS AUDIO</span>
+                    🔊 - <span className="italic">THIS GAME PLAYS AUDIO</span>
                     </p>
                     <p className="text-sm text-gray-500 mt-1">
-                      🗣️ -{" "}
+                    ⚠️ -{" "}
                       <span className="italic">
                         MAY CONTAIN EXPLICIT LYRICS
                       </span>
@@ -131,7 +118,9 @@ const Header = ({
                     <button
                       type="button"
                       className="inline-flex justify-center rounded-md border bg-green-100 px-4 py-2 text-sm font-medium text-green-900 hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2"
-                      onClick={() => setInfoModal(false)}
+                      onClick={() => {
+                        setInfoModal(false);
+                      }}
                     >
                       Play
                     </button>
@@ -203,7 +192,10 @@ const Header = ({
                       <div className="text-xl">{streak}</div>
                       <div className="text-xs">Streak</div>
                     </div>
+                    
                   </div>
+                  <Chart stats={stats}
+                    />
                 </Dialog.Panel>
               </Transition.Child>
             </div>
