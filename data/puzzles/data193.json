@@ -1,1 +1,134 @@
-{"id":193,"tracks":[{"id":"1YeRzv1VnHGHNwEdIx7emL","name":"Run the World!!!","track_url":"https://open.spotify.com/track/1YeRzv1VnHGHNwEdIx7emL","preview_url":"https://p.scdn.co/mp3-preview/df58377ff1661fb79e4d44db06266cba0738f261?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Dayglow","artist_url":"https://open.spotify.com/artist/6eJa3zG1QZLRB3xgRuyxbm"}],"loudness":-7.711},{"id":"44QXuTojkKWGPlgeky4AIN","name":"Raka Taka Taka","track_url":"https://open.spotify.com/track/44QXuTojkKWGPlgeky4AIN","preview_url":"https://p.scdn.co/mp3-preview/8b98c142b338a33e68ff27daa1b25b9f6240cd43?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Alan Gomez","artist_url":"https://open.spotify.com/artist/6oMRQ5H3A2XA5I3RG3leni"},{"name":"Lucas Rmx","artist_url":"https://open.spotify.com/artist/21CKyPYROyg4nbz8Gy4U10"},{"name":"Matias Mareco","artist_url":"https://open.spotify.com/artist/5HGyhzksPEsFkqHGbt5epX"}],"loudness":-7.71},{"id":"5LObYTTLCpqhTQIMWeBAvx","name":"Wesson","track_url":"https://open.spotify.com/track/5LObYTTLCpqhTQIMWeBAvx","preview_url":"https://p.scdn.co/mp3-preview/45ef2341a168651245488fefa399ced3fb90b376?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Raeusi","artist_url":"https://open.spotify.com/artist/2gVbZgSkbei8oQAfREgBMt"},{"name":"Yung Fazo","artist_url":"https://open.spotify.com/artist/2UuVqmRzuGdHQB7BKACEW4"}],"loudness":-7.708},{"id":"62xmc3AKafTs4EDo1ogrU8","name":"Lullaby - Extended Mix; 2018 Remaster [Remastered]","track_url":"https://open.spotify.com/track/62xmc3AKafTs4EDo1ogrU8","preview_url":"https://p.scdn.co/mp3-preview/422b95cd6627a2e37dd352decdcba4d55fda8bbb?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"The Cure","artist_url":"https://open.spotify.com/artist/7bu3H8JO7d0UbMoVzbo70s"},{"name":"David M. Allen","artist_url":"https://open.spotify.com/artist/3KPbOeJNTdNFUOiBaXuuZg"},{"name":"Mark Saunders","artist_url":"https://open.spotify.com/artist/3QoHE4hN2waHD2jELo0x9N"},{"name":"Robert Smith","artist_url":"https://open.spotify.com/artist/6G7P2EzH5A36ujN9VPm4B0"}],"loudness":-7.705},{"id":"5jQcJ2st6yHWhUBjoDoZPH","name":"Georgy Porgy","track_url":"https://open.spotify.com/track/5jQcJ2st6yHWhUBjoDoZPH","preview_url":"https://p.scdn.co/mp3-preview/7ad20e15eab11e2c88ad9ffbc94f4c6b780f5663?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"TOTO","artist_url":"https://open.spotify.com/artist/0PFtn5NtBbbUNbU9EAmIWF"}],"loudness":-7.703},{"id":"4TlE6betO4tqzEn0bREQfq","name":"(Joe Gets Kicked Out of School for Using) Drugs With Friends (But Says This Isn't a Problem)","track_url":"https://open.spotify.com/track/4TlE6betO4tqzEn0bREQfq","preview_url":"https://p.scdn.co/mp3-preview/f481ade41d7f95f347c8dd3eb732a90e57497c57?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Car Seat Headrest","artist_url":"https://open.spotify.com/artist/5PbpKlxQE0Ktl5lcNABoFf"}],"loudness":-7.702},{"id":"1SJ7eKG6Ha5opLNxlXXvwa","name":"Lonely Nights","track_url":"https://open.spotify.com/track/1SJ7eKG6Ha5opLNxlXXvwa","preview_url":"https://p.scdn.co/mp3-preview/8cf6068432f23623b738a6d981f504389653b734?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"LEISURE","artist_url":"https://open.spotify.com/artist/7b04D0yLktCUpvxQBhmG7R"}],"loudness":-7.698},{"id":"3850dYVgOFIXJh5U4BFEWH","name":"Hung Up","track_url":"https://open.spotify.com/track/3850dYVgOFIXJh5U4BFEWH","preview_url":"https://p.scdn.co/mp3-preview/dffaf6d378f42c2ec6311d17fadc5fc26eb84bf8?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Madonna","artist_url":"https://open.spotify.com/artist/6tbjWDEIzxoDsBA1FuhfPW"}],"loudness":-7.695}],"order":[6,15,10,7,1,8,14,4,12,13,5,9,3,2,11,0]}
+{
+  "id": 193,
+  "tracks": [
+    {
+      "id": "1YeRzv1VnHGHNwEdIx7emL",
+      "name": "Run the World!!!",
+      "track_url": "https://open.spotify.com/track/1YeRzv1VnHGHNwEdIx7emL",
+      "preview_url": "https://p.scdn.co/mp3-preview/df58377ff1661fb79e4d44db06266cba0738f261?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Dayglow",
+          "artist_url": "https://open.spotify.com/artist/6eJa3zG1QZLRB3xgRuyxbm"
+        }
+      ],
+      "loudness": -7.711
+    },
+    {
+      "id": "44QXuTojkKWGPlgeky4AIN",
+      "name": "Raka Taka Taka",
+      "track_url": "https://open.spotify.com/track/44QXuTojkKWGPlgeky4AIN",
+      "preview_url": "https://p.scdn.co/mp3-preview/8b98c142b338a33e68ff27daa1b25b9f6240cd43?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Alan Gomez",
+          "artist_url": "https://open.spotify.com/artist/6oMRQ5H3A2XA5I3RG3leni"
+        },
+        {
+          "name": "Lucas Rmx",
+          "artist_url": "https://open.spotify.com/artist/21CKyPYROyg4nbz8Gy4U10"
+        },
+        {
+          "name": "Matias Mareco",
+          "artist_url": "https://open.spotify.com/artist/5HGyhzksPEsFkqHGbt5epX"
+        }
+      ],
+      "loudness": -7.71
+    },
+    {
+      "id": "5LObYTTLCpqhTQIMWeBAvx",
+      "name": "Wesson",
+      "track_url": "https://open.spotify.com/track/5LObYTTLCpqhTQIMWeBAvx",
+      "preview_url": "https://p.scdn.co/mp3-preview/45ef2341a168651245488fefa399ced3fb90b376?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Raeusi",
+          "artist_url": "https://open.spotify.com/artist/2gVbZgSkbei8oQAfREgBMt"
+        },
+        {
+          "name": "Yung Fazo",
+          "artist_url": "https://open.spotify.com/artist/2UuVqmRzuGdHQB7BKACEW4"
+        }
+      ],
+      "loudness": -7.708
+    },
+    {
+      "id": "62xmc3AKafTs4EDo1ogrU8",
+      "name": "Lullaby - Extended Mix; 2018 Remaster [Remastered]",
+      "track_url": "https://open.spotify.com/track/62xmc3AKafTs4EDo1ogrU8",
+      "preview_url": "https://p.scdn.co/mp3-preview/422b95cd6627a2e37dd352decdcba4d55fda8bbb?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "The Cure",
+          "artist_url": "https://open.spotify.com/artist/7bu3H8JO7d0UbMoVzbo70s"
+        },
+        {
+          "name": "David M. Allen",
+          "artist_url": "https://open.spotify.com/artist/3KPbOeJNTdNFUOiBaXuuZg"
+        },
+        {
+          "name": "Mark Saunders",
+          "artist_url": "https://open.spotify.com/artist/3QoHE4hN2waHD2jELo0x9N"
+        },
+        {
+          "name": "Robert Smith",
+          "artist_url": "https://open.spotify.com/artist/6G7P2EzH5A36ujN9VPm4B0"
+        }
+      ],
+      "loudness": -7.705
+    },
+    {
+      "id": "5jQcJ2st6yHWhUBjoDoZPH",
+      "name": "Georgy Porgy",
+      "track_url": "https://open.spotify.com/track/5jQcJ2st6yHWhUBjoDoZPH",
+      "preview_url": "https://p.scdn.co/mp3-preview/7ad20e15eab11e2c88ad9ffbc94f4c6b780f5663?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "TOTO",
+          "artist_url": "https://open.spotify.com/artist/0PFtn5NtBbbUNbU9EAmIWF"
+        }
+      ],
+      "loudness": -7.703
+    },
+    {
+      "id": "4TlE6betO4tqzEn0bREQfq",
+      "name": "(Joe Gets Kicked Out of School for Using) Drugs With Friends (But Says This Isn't a Problem)",
+      "track_url": "https://open.spotify.com/track/4TlE6betO4tqzEn0bREQfq",
+      "preview_url": "https://p.scdn.co/mp3-preview/f481ade41d7f95f347c8dd3eb732a90e57497c57?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Car Seat Headrest",
+          "artist_url": "https://open.spotify.com/artist/5PbpKlxQE0Ktl5lcNABoFf"
+        }
+      ],
+      "loudness": -7.702
+    },
+    {
+      "id": "1SJ7eKG6Ha5opLNxlXXvwa",
+      "name": "Lonely Nights",
+      "track_url": "https://open.spotify.com/track/1SJ7eKG6Ha5opLNxlXXvwa",
+      "preview_url": "https://p.scdn.co/mp3-preview/8cf6068432f23623b738a6d981f504389653b734?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "LEISURE",
+          "artist_url": "https://open.spotify.com/artist/7b04D0yLktCUpvxQBhmG7R"
+        }
+      ],
+      "loudness": -7.698
+    },
+    {
+      "id": "3850dYVgOFIXJh5U4BFEWH",
+      "name": "Hung Up",
+      "track_url": "https://open.spotify.com/track/3850dYVgOFIXJh5U4BFEWH",
+      "preview_url": "https://p.scdn.co/mp3-preview/dffaf6d378f42c2ec6311d17fadc5fc26eb84bf8?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Madonna",
+          "artist_url": "https://open.spotify.com/artist/6tbjWDEIzxoDsBA1FuhfPW"
+        }
+      ],
+      "loudness": -7.695
+    }
+  ],
+  "order": [6, 15, 10, 7, 1, 8, 14, 4, 12, 13, 5, 9, 3, 2, 11, 0]
+}
