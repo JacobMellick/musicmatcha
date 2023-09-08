@@ -48,14 +48,14 @@ export const reducer = (state: State, action: Action): State => {
           isSolved: false,
           isPlaying: false,
           startPct: 0.1,
-          endPct: 0.3,
+          endPct: 0.4,
         },
         {
           id: 0,
           track,
           isSolved: false,
           isPlaying: false,
-          startPct: 0.7,
+          startPct: 0.6,
           endPct: 0.9,
         },
       ]);
