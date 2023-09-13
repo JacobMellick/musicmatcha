@@ -1,1 +1,118 @@
-{"id":6,"tracks":[{"id":"3LUWWox8YYykohBbHUrrxd","name":"We R Who We R","track_url":"https://open.spotify.com/track/3LUWWox8YYykohBbHUrrxd","preview_url":"https://p.scdn.co/mp3-preview/87e275c268cbc6f76b509f4dd237bcea41d92059?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Kesha","artist_url":"https://open.spotify.com/artist/6LqNN22kT3074XbTVUrhzX"}],"loudness":-4.9},{"id":"5Odq8ohlgIbQKMZivbWkEo","name":"Left and Right (Feat. Jung Kook of BTS)","track_url":"https://open.spotify.com/track/5Odq8ohlgIbQKMZivbWkEo","preview_url":"https://p.scdn.co/mp3-preview/9e4342eefa4f33df4e9b199e60dbce0f59e46eff?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Charlie Puth","artist_url":"https://open.spotify.com/artist/6VuMaDnrHyPL1p4EHjYLi7"},{"name":"Jung Kook","artist_url":"https://open.spotify.com/artist/6HaGTQPmzraVmaVxvz6EUc"},{"name":"BTS","artist_url":"https://open.spotify.com/artist/3Nrfpe0tUJi4K4DXYWgMUX"}],"loudness":-4.898},{"id":"6OnfBiiSc9RGKiBKKtZXgQ","name":"We Built This City","track_url":"https://open.spotify.com/track/6OnfBiiSc9RGKiBKKtZXgQ","preview_url":"https://p.scdn.co/mp3-preview/7c136e7220892133e94c4d13d4ca7262d3d5cf4c?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Starship","artist_url":"https://open.spotify.com/artist/0kObWap02DEg9EAJ3PBxzf"}],"loudness":-4.897},{"id":"6GoLARmR2OZl2EldehFrsA","name":"Immaterial","track_url":"https://open.spotify.com/track/6GoLARmR2OZl2EldehFrsA","preview_url":"https://p.scdn.co/mp3-preview/035c448c4465fbfabe24054e0fae06271ed94709?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"SOPHIE","artist_url":"https://open.spotify.com/artist/5a2w2tgpLwv26BYJf2qYwu"}],"loudness":-4.897},{"id":"3UpS7kBnkVQYG13pDDFTC4","name":"As Long as You Love Me","track_url":"https://open.spotify.com/track/3UpS7kBnkVQYG13pDDFTC4","preview_url":"https://p.scdn.co/mp3-preview/9e45a104bc8d916c0386fa87e91f2fe2f3de0bf7?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Backstreet Boys","artist_url":"https://open.spotify.com/artist/5rSXSAkZ67PYJSvpUpkOr7"}],"loudness":-4.892},{"id":"2XIc1pqjXV3Cr2BQUGNBck","name":"LA NOCHE DE ANOCHE","track_url":"https://open.spotify.com/track/2XIc1pqjXV3Cr2BQUGNBck","preview_url":"https://p.scdn.co/mp3-preview/a3ed62c5afae78f594a7346af78a9638a7bce068?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Bad Bunny","artist_url":"https://open.spotify.com/artist/4q3ewBCX7sLwd24euuV69X"},{"name":"ROSALÍA","artist_url":"https://open.spotify.com/artist/7ltDVBr6mKbRvohxheJ9h1"}],"loudness":-4.892},{"id":"78ul3D77noQsYjSwvwiPU1","name":"Break It Off - Bonus","track_url":"https://open.spotify.com/track/78ul3D77noQsYjSwvwiPU1","preview_url":"https://p.scdn.co/mp3-preview/20403d56b50460c9b53ac3e0bd3c5e51ac9cf9cf?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"PinkPantheress","artist_url":"https://open.spotify.com/artist/78rUTD7y6Cy67W1RVzYs7t"}],"loudness":-4.891},{"id":"2ALwVZCJlxBTqQv4UCqWh3","name":"Jim Carrey","track_url":"https://open.spotify.com/track/2ALwVZCJlxBTqQv4UCqWh3","preview_url":"https://p.scdn.co/mp3-preview/7f9e8e3c8d34b0dfbbb9a1b4144d748090a17224?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Charlotte Cardin","artist_url":"https://open.spotify.com/artist/1G0YV9WooUBjrwDq0Q7EFK"}],"loudness":-4.871}],"order":[10,0,3,1,14,2,8,11,15,9,4,5,13,12,6,7]}
+{
+  "id": 7,
+  "tracks": [
+    {
+      "id": "7AUHZBFJ5c7fiLhl0I9r5S",
+      "name": "First Light",
+      "track_url": "https://open.spotify.com/track/7AUHZBFJ5c7fiLhl0I9r5S",
+      "preview_url": "https://p.scdn.co/mp3-preview/323299a9bbb69fa4bd3d32e4952a4fb3bbb92ee3?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Xavier Wulf",
+          "artist_url": "https://open.spotify.com/artist/3uo0ix4Y67XHVWBhXXIY1S"
+        }
+      ],
+      "loudness": -6.065
+    },
+    {
+      "id": "4tV2mMnloLXgVKT1xeN46v",
+      "name": "Last Minute",
+      "track_url": "https://open.spotify.com/track/4tV2mMnloLXgVKT1xeN46v",
+      "preview_url": "https://p.scdn.co/mp3-preview/cee1e17c8ce34b01d759a50df86400748422426c?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Kitty",
+          "artist_url": "https://open.spotify.com/artist/6YMeCrTjUKwsXh9yhQJjEV"
+        }
+      ],
+      "loudness": -6.065
+    },
+    {
+      "id": "2dHrQa0YO0YNQoK2TKDLDu",
+      "name": "Sunglasses at Night - Extended Version",
+      "track_url": "https://open.spotify.com/track/2dHrQa0YO0YNQoK2TKDLDu",
+      "preview_url": "https://p.scdn.co/mp3-preview/d9174d3d9f31920ee41b17f33e04bb1987928b9d?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Corey Hart",
+          "artist_url": "https://open.spotify.com/artist/0smy8yDrRoI4CnhpOuthg0"
+        }
+      ],
+      "loudness": -6.06
+    },
+    {
+      "id": "6m0qWZuDX392KrSKWPC0Gx",
+      "name": "Gummy (Mixed)",
+      "track_url": "https://open.spotify.com/track/6m0qWZuDX392KrSKWPC0Gx",
+      "preview_url": "https://p.scdn.co/mp3-preview/a87f98fb00896ecfe3fb22880b3f19795d88141d?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Loud Luxury",
+          "artist_url": "https://open.spotify.com/artist/6t1gpxYbY8OlLA7D2RiikQ"
+        },
+        {
+          "name": "Brando",
+          "artist_url": "https://open.spotify.com/artist/5uEeqYFuIChoWKy34jp8xE"
+        }
+      ],
+      "loudness": -6.06
+    },
+    {
+      "id": "1cKZOJMYyQMXKOwrNqHd09",
+      "name": "Maybe in the Summer",
+      "track_url": "https://open.spotify.com/track/1cKZOJMYyQMXKOwrNqHd09",
+      "preview_url": "https://p.scdn.co/mp3-preview/714e998cc161fc69e0fa05bf96e4723b289a65e1?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Sassy 009",
+          "artist_url": "https://open.spotify.com/artist/30gJ2CPCeUvghTg6TkfA4L"
+        }
+      ],
+      "loudness": -6.059
+    },
+    {
+      "id": "2tJVc52CEjcp4mkaWCz9RE",
+      "name": "Fantasy",
+      "track_url": "https://open.spotify.com/track/2tJVc52CEjcp4mkaWCz9RE",
+      "preview_url": "https://p.scdn.co/mp3-preview/3e5d1584b422b520ccc2ddfab0baa1660e50864a?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Alina Baraz",
+          "artist_url": "https://open.spotify.com/artist/6hfwwpXqZPRC9CsKI7qtv1"
+        },
+        {
+          "name": "Galimatias",
+          "artist_url": "https://open.spotify.com/artist/0tOrKkXIn3VYyVHFEPG6Xd"
+        }
+      ],
+      "loudness": -6.056
+    },
+    {
+      "id": "3G7tRC24Uh09Hmp1KZ7LQ2",
+      "name": "I'm a Believer - 2006 Remaster",
+      "track_url": "https://open.spotify.com/track/3G7tRC24Uh09Hmp1KZ7LQ2",
+      "preview_url": "https://p.scdn.co/mp3-preview/c87a45f50a2a2a771aa100dbe15be234bd9b560d?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "The Monkees",
+          "artist_url": "https://open.spotify.com/artist/320EPCSEezHt1rtbfwH6Ck"
+        }
+      ],
+      "loudness": -6.05
+    },
+    {
+      "id": "5OqMZ8In8CkCa0SbknnDPl",
+      "name": "GRL GVNG",
+      "track_url": "https://open.spotify.com/track/5OqMZ8In8CkCa0SbknnDPl",
+      "preview_url": "https://p.scdn.co/mp3-preview/e0bb1fd56dc17cdf711a9b0214ca68e9b606cecc?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "XG",
+          "artist_url": "https://open.spotify.com/artist/0LOK81e9H5lr61HlGGHqwA"
+        }
+      ],
+      "loudness": -6.043
+    }
+  ],
+  "order": [15, 6, 13, 12, 10, 11, 8, 7, 0, 9, 2, 14, 4, 5, 1, 3]
+}
