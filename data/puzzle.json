@@ -1,118 +1,118 @@
 {
-  "id": 7,
+  "id": 8,
   "tracks": [
     {
-      "id": "7AUHZBFJ5c7fiLhl0I9r5S",
-      "name": "First Light",
-      "track_url": "https://open.spotify.com/track/7AUHZBFJ5c7fiLhl0I9r5S",
-      "preview_url": "https://p.scdn.co/mp3-preview/323299a9bbb69fa4bd3d32e4952a4fb3bbb92ee3?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "id": "2rtGaCAeYtmcIvuZsvgTf6",
+      "name": "How to Disappear Completely",
+      "track_url": "https://open.spotify.com/track/2rtGaCAeYtmcIvuZsvgTf6",
+      "preview_url": "https://p.scdn.co/mp3-preview/7236209a1042a9508b66d02bd18deed9bfd4bb99?cid=b9f768253ec042088f3bcb2b250ca48c",
       "artists": [
         {
-          "name": "Xavier Wulf",
-          "artist_url": "https://open.spotify.com/artist/3uo0ix4Y67XHVWBhXXIY1S"
+          "name": "Radiohead",
+          "artist_url": "https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb"
         }
       ],
-      "loudness": -6.065
+      "loudness": -11.644
     },
     {
-      "id": "4tV2mMnloLXgVKT1xeN46v",
-      "name": "Last Minute",
-      "track_url": "https://open.spotify.com/track/4tV2mMnloLXgVKT1xeN46v",
-      "preview_url": "https://p.scdn.co/mp3-preview/cee1e17c8ce34b01d759a50df86400748422426c?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "id": "38llcrfX1arUqrEe0DRRzW",
+      "name": "I Got a Name - Stereo Version",
+      "track_url": "https://open.spotify.com/track/38llcrfX1arUqrEe0DRRzW",
+      "preview_url": "https://p.scdn.co/mp3-preview/42506b07277a632d63837237ec7f888f25f3fbdb?cid=b9f768253ec042088f3bcb2b250ca48c",
       "artists": [
         {
-          "name": "Kitty",
-          "artist_url": "https://open.spotify.com/artist/6YMeCrTjUKwsXh9yhQJjEV"
+          "name": "Jim Croce",
+          "artist_url": "https://open.spotify.com/artist/1R6Hx1tJ2VOUyodEpC12xM"
         }
       ],
-      "loudness": -6.065
+      "loudness": -11.625
     },
     {
-      "id": "2dHrQa0YO0YNQoK2TKDLDu",
-      "name": "Sunglasses at Night - Extended Version",
-      "track_url": "https://open.spotify.com/track/2dHrQa0YO0YNQoK2TKDLDu",
-      "preview_url": "https://p.scdn.co/mp3-preview/d9174d3d9f31920ee41b17f33e04bb1987928b9d?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "id": "7Di7t9yGoxdZRLAt5a4pi0",
+      "name": "Manic Monday",
+      "track_url": "https://open.spotify.com/track/7Di7t9yGoxdZRLAt5a4pi0",
+      "preview_url": "https://p.scdn.co/mp3-preview/7ea23047c974dd1a400bcf6813127f0ad6add983?cid=b9f768253ec042088f3bcb2b250ca48c",
       "artists": [
         {
-          "name": "Corey Hart",
-          "artist_url": "https://open.spotify.com/artist/0smy8yDrRoI4CnhpOuthg0"
+          "name": "The Bangles",
+          "artist_url": "https://open.spotify.com/artist/51l0uqRxGaczYr4271pVIC"
         }
       ],
-      "loudness": -6.06
+      "loudness": -11.623
     },
     {
-      "id": "6m0qWZuDX392KrSKWPC0Gx",
-      "name": "Gummy (Mixed)",
-      "track_url": "https://open.spotify.com/track/6m0qWZuDX392KrSKWPC0Gx",
-      "preview_url": "https://p.scdn.co/mp3-preview/a87f98fb00896ecfe3fb22880b3f19795d88141d?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "id": "6SPu3UZHRI4JwTAmCfc9cS",
+      "name": "Emergency",
+      "track_url": "https://open.spotify.com/track/6SPu3UZHRI4JwTAmCfc9cS",
+      "preview_url": "https://p.scdn.co/mp3-preview/dabb09e59b4ada38ea8e8f3b808b654a7c646a6f?cid=b9f768253ec042088f3bcb2b250ca48c",
       "artists": [
         {
-          "name": "Loud Luxury",
-          "artist_url": "https://open.spotify.com/artist/6t1gpxYbY8OlLA7D2RiikQ"
+          "name": "Feed Me Jack",
+          "artist_url": "https://open.spotify.com/artist/2eBmUbHKMQCAdD824cSiIL"
+        }
+      ],
+      "loudness": -11.616
+    },
+    {
+      "id": "7neXef29cogkuASB5rTafo",
+      "name": "Bends",
+      "track_url": "https://open.spotify.com/track/7neXef29cogkuASB5rTafo",
+      "preview_url": "https://p.scdn.co/mp3-preview/8183eaebc7a8ebdfdc8c6449f1dccad882eb0be4?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Ralph Castelli",
+          "artist_url": "https://open.spotify.com/artist/4o16FybIZV7WPD7tOl7PUd"
+        }
+      ],
+      "loudness": -11.611
+    },
+    {
+      "id": "15VdjtCwcVZmVZHRy63Zgj",
+      "name": "KKMJ",
+      "track_url": "https://open.spotify.com/track/15VdjtCwcVZmVZHRy63Zgj",
+      "preview_url": "https://p.scdn.co/mp3-preview/b7ecf493f2677a6655cef532be29f44773eb09f3?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Sweet Trip",
+          "artist_url": "https://open.spotify.com/artist/5NtMqQLCzdVvL7F8vFp3zM"
+        }
+      ],
+      "loudness": -11.589
+    },
+    {
+      "id": "77KaAmSH0dR0v1x3MD57fR",
+      "name": "Beauty And A Beat (Sped Up) - Remix",
+      "track_url": "https://open.spotify.com/track/77KaAmSH0dR0v1x3MD57fR",
+      "preview_url": "https://p.scdn.co/mp3-preview/9ff9946891c23fc1bd55c4bb489135f6056a269a?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "artists": [
+        {
+          "name": "Xanemusic",
+          "artist_url": "https://open.spotify.com/artist/6QSOpFwMSqDj21HVu34Wm1"
         },
         {
-          "name": "Brando",
-          "artist_url": "https://open.spotify.com/artist/5uEeqYFuIChoWKy34jp8xE"
-        }
-      ],
-      "loudness": -6.06
-    },
-    {
-      "id": "1cKZOJMYyQMXKOwrNqHd09",
-      "name": "Maybe in the Summer",
-      "track_url": "https://open.spotify.com/track/1cKZOJMYyQMXKOwrNqHd09",
-      "preview_url": "https://p.scdn.co/mp3-preview/714e998cc161fc69e0fa05bf96e4723b289a65e1?cid=b9f768253ec042088f3bcb2b250ca48c",
-      "artists": [
-        {
-          "name": "Sassy 009",
-          "artist_url": "https://open.spotify.com/artist/30gJ2CPCeUvghTg6TkfA4L"
-        }
-      ],
-      "loudness": -6.059
-    },
-    {
-      "id": "2tJVc52CEjcp4mkaWCz9RE",
-      "name": "Fantasy",
-      "track_url": "https://open.spotify.com/track/2tJVc52CEjcp4mkaWCz9RE",
-      "preview_url": "https://p.scdn.co/mp3-preview/3e5d1584b422b520ccc2ddfab0baa1660e50864a?cid=b9f768253ec042088f3bcb2b250ca48c",
-      "artists": [
-        {
-          "name": "Alina Baraz",
-          "artist_url": "https://open.spotify.com/artist/6hfwwpXqZPRC9CsKI7qtv1"
+          "name": "NVBR",
+          "artist_url": "https://open.spotify.com/artist/7kO87cGufDvuHXsXtqEBfL"
         },
         {
-          "name": "Galimatias",
-          "artist_url": "https://open.spotify.com/artist/0tOrKkXIn3VYyVHFEPG6Xd"
+          "name": "kevoxx",
+          "artist_url": "https://open.spotify.com/artist/5xmZKWPhiMa6sD84Efjrh9"
         }
       ],
-      "loudness": -6.056
+      "loudness": -11.583
     },
     {
-      "id": "3G7tRC24Uh09Hmp1KZ7LQ2",
-      "name": "I'm a Believer - 2006 Remaster",
-      "track_url": "https://open.spotify.com/track/3G7tRC24Uh09Hmp1KZ7LQ2",
-      "preview_url": "https://p.scdn.co/mp3-preview/c87a45f50a2a2a771aa100dbe15be234bd9b560d?cid=b9f768253ec042088f3bcb2b250ca48c",
+      "id": "5OKScc0MSa9Wl8g2zrulLn",
+      "name": "Cherish",
+      "track_url": "https://open.spotify.com/track/5OKScc0MSa9Wl8g2zrulLn",
+      "preview_url": "https://p.scdn.co/mp3-preview/619d3b05335795bbbe63b3ef5291379461f628b5?cid=b9f768253ec042088f3bcb2b250ca48c",
       "artists": [
         {
-          "name": "The Monkees",
-          "artist_url": "https://open.spotify.com/artist/320EPCSEezHt1rtbfwH6Ck"
+          "name": "Madonna",
+          "artist_url": "https://open.spotify.com/artist/6tbjWDEIzxoDsBA1FuhfPW"
         }
       ],
-      "loudness": -6.05
-    },
-    {
-      "id": "5OqMZ8In8CkCa0SbknnDPl",
-      "name": "GRL GVNG",
-      "track_url": "https://open.spotify.com/track/5OqMZ8In8CkCa0SbknnDPl",
-      "preview_url": "https://p.scdn.co/mp3-preview/e0bb1fd56dc17cdf711a9b0214ca68e9b606cecc?cid=b9f768253ec042088f3bcb2b250ca48c",
-      "artists": [
-        {
-          "name": "XG",
-          "artist_url": "https://open.spotify.com/artist/0LOK81e9H5lr61HlGGHqwA"
-        }
-      ],
-      "loudness": -6.043
+      "loudness": -11.581
     }
   ],
-  "order": [15, 6, 13, 12, 10, 11, 8, 7, 0, 9, 2, 14, 4, 5, 1, 3]
+  "order": [0, 11, 8, 9, 4, 12, 3, 2, 14, 15, 10, 5, 7, 6, 13, 1]
 }
