@@ -27,7 +27,12 @@ type State = {
 type Action =
   | {
       type: "init";
-      payload: { order: number[]; solved: Track[]; moves: number };
+      payload: {
+        tracks: Track[];
+        order: number[];
+        solved: Track[];
+        moves: number;
+      };
     }
   | {
       type: "tileClick";
@@ -41,7 +46,7 @@ type Action =
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "init":
-      const unTiles: State["tiles"] = state.tracks.flatMap((track) => [
+      const unTiles: State["tiles"] = action.payload.tracks.flatMap((track) => [
         {
           id: 0,
           track,
@@ -62,7 +67,9 @@ export const reducer = (state: State, action: Action): State => {
       const tiles = orderArray(unTiles, action.payload.order);
       return {
         ...state,
+        tracks: action.payload.tracks,
         tiles: tiles.map((tile, index) => ({ ...tile, id: index })),
+        playingTile: undefined,
         selectedTiles: [],
         moves: action.payload.moves,
         solved: action.payload.solved,

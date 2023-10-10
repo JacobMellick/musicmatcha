@@ -8,8 +8,9 @@ import Page from "@/components/layout/Page";
 import { reducer } from "@/components/reducers/game";
 import Tile from "@/components/Tile";
 import { usePlayer } from "@/context/PlayerContext";
-import Puzzle from "@/data/puzzle.json";
+import Genres from "@/lib/genres.json";
 import { NUM_MOVES } from "@/lib/constants";
+import supabase from "@/lib/supabase";
 
 import type { Track } from "@/types/proj01";
 import {
@@ -20,29 +21,50 @@ import {
   GameStats,
 } from "@/lib/localStorage";
 
-type HomeProps = {
-  id: number;
+type Puzzle = {
   tracks: Track[];
   order: number[];
 };
 
-const numberObj: {[key: number]: number} = {}
+type HomeProps = {
+  id: number;
+  puzzles: Record<string, Puzzle>;
+};
 
-for (let i = 16; i > 0; i-- ) {
-  numberObj[i] = 0
+const numberObj: { [key: number]: number } = {};
+
+for (let i = 16; i > 0; i--) {
+  numberObj[i] = 0;
 }
 
-const Home = ({ id, tracks, order }: HomeProps) => {
+const orderTemplate: number[] = [];
+
+for (let i = 0; i < 16; i++) {
+  orderTemplate.push(i);
+}
+
+const shuffleArray = (array: number[]) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1)); // Generate a random index
+    // Swap elements at i and j
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+const Home = ({ id, puzzles }: HomeProps) => {
   const [playerStats, setPlayerStats] = useState<GameStats>({
     plays: 0,
     wins: 0,
     streak: 0,
     recorded: false,
-    stats: numberObj
+    stats: numberObj,
   });
 
+  const [genre, setGenre] = useState<string>("pop");
+
   const [state, dispatch] = useReducer(reducer, {
-    tracks,
+    tracks: [],
     tiles: [],
     selectedTiles: [],
     moves: NUM_MOVES,
@@ -57,14 +79,13 @@ const Home = ({ id, tracks, order }: HomeProps) => {
     const localId = localStorage.getItem("id");
     const localParsed = localId ? JSON.parse(localId) : id;
 
-    let localState = getLocalGamestate();
+    let localState = getLocalGamestate(genre);
     let localStats = getLocalGameStats();
     let localToChange = { ...localStats };
 
     if (id !== localParsed) {
-      console.log("newPuzzle");
       const streak = id - localParsed > 1 ? 0 : localStats.streak;
-      setLocalGamestate({
+      setLocalGamestate(genre, {
         moves: NUM_MOVES,
         solved: [],
       });
@@ -76,13 +97,14 @@ const Home = ({ id, tracks, order }: HomeProps) => {
       localToChange = { ...localStats, streak, recorded: false };
     }
 
-    localState = getLocalGamestate();
+    localState = getLocalGamestate(genre);
     localStats = getLocalGameStats();
 
     dispatch({
       type: "init",
       payload: {
-        order: order,
+        tracks: puzzles[genre].tracks,
+        order: puzzles[genre].order,
         solved: localState.solved,
         moves: localState.moves,
       },
@@ -91,14 +113,15 @@ const Home = ({ id, tracks, order }: HomeProps) => {
     localStorage.setItem("id", JSON.stringify(id));
 
     setPlayerStats({ ...localToChange });
-  }, []);
+  }, [genre]);
 
   useEffect(() => {
-    setLocalGamestate({
+    console.log(state);
+    setLocalGamestate(genre, {
       moves: state.moves,
       solved: state.solved,
     });
-  }, [state.solved, state.moves]);
+  }, [genre, state.solved, state.moves]);
 
   const handleTileClick = (id: number) => {
     if (
@@ -140,6 +163,14 @@ const Home = ({ id, tracks, order }: HomeProps) => {
         state.solved.length != 0)
     ) {
       setGameOver(true);
+    } else if (
+      !(
+        state.moves === 0 ||
+        (state.solved.length === state.tiles.length / 2 &&
+          state.solved.length != 0)
+      )
+    ) {
+      setGameOver(false);
     }
   }, [state.moves, state.solved, state.tiles]);
 
@@ -165,7 +196,10 @@ const Home = ({ id, tracks, order }: HomeProps) => {
           plays: localStats.plays + 1,
           streak: localStats.streak + 1,
           recorded: true,
-          stats: {...localStats.stats, [state.moves]: localStats.stats[state.moves] + 1}
+          stats: {
+            ...localStats.stats,
+            [state.moves]: localStats.stats[state.moves] + 1,
+          },
         };
         setLocalGameStats(winObj);
         setPlayerStats(winObj);
@@ -182,6 +216,13 @@ const Home = ({ id, tracks, order }: HomeProps) => {
         streak={playerStats.streak}
         stats={playerStats.stats}
       />
+      <select value={genre} onChange={(event) => setGenre(event.target.value)}>
+        {Object.keys(puzzles).map((genre) => (
+          <option key={genre} value={genre}>
+            {genre}
+          </option>
+        ))}
+      </select>
       {!gameOver ? (
         <Page title="Home">
           <div className="flex justify-center pt-8 sm:pt-0">
@@ -245,12 +286,41 @@ const Home = ({ id, tracks, order }: HomeProps) => {
   );
 };
 
+function getRandomTracks(genre: string) {
+  return supabase.from("random_track").select("*").eq("genre", genre).limit(8);
+}
+
 export async function getStaticProps() {
+  const genreTracks = await Promise.all(
+    Genres.map(async (genre) => ({
+      genre: genre,
+      data: await getRandomTracks(genre),
+    }))
+  );
+
+  let game = { id: 0, puzzles: {} };
+  for (const record of genreTracks) {
+    game.puzzles = {
+      ...game.puzzles,
+      [record.genre]: {
+        tracks: record.data.data
+          ? record.data.data.map((track) => ({
+              name: track.name,
+              track_url: track.track_url,
+              preview_url: track.preview_url,
+              artists: track.artists,
+            }))
+          : null,
+        order: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      },
+    };
+  }
+
+  console.log(game);
   return {
     props: {
-      id: Puzzle.id,
-      tracks: Puzzle.tracks,
-      order: Puzzle.order,
+      id: game.id,
+      puzzles: game.puzzles,
     },
   };
 }

@@ -20,13 +20,13 @@ export type GameStats = {
   stats: { [key: number]: number };
 };
 
-export const setLocalGamestate = (val: Gamestate) => {
-  localStorage.setItem("musicmatcha", JSON.stringify(val));
+export const setLocalGamestate = (genre: string, val: Gamestate) => {
+  localStorage.setItem(`musicmatcha.${genre}`, JSON.stringify(val));
 };
 
-export const getLocalGamestate = () => {
+export const getLocalGamestate = (genre: string) => {
   if (typeof window !== "undefined") {
-    const state = localStorage.getItem("musicmatcha");
+    const state = localStorage.getItem(`musicmatcha.${genre}`);
     return state
       ? (JSON.parse(state) as Gamestate)
       : { solved: [], moves: NUM_MOVES };
