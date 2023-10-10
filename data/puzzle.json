@@ -1,1 +1,235 @@
-{"id":9,"tracks":[{"id":"39fUc1PFMJdOUJrSWrPuYp","name":"Music to Watch Girls By","track_url":"https://open.spotify.com/track/39fUc1PFMJdOUJrSWrPuYp","preview_url":"https://p.scdn.co/mp3-preview/528d0df0a6b8147a73b20de5c6a433a34edb1fd2?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Andy Williams","artist_url":"https://open.spotify.com/artist/4sj6D0zlMOl25nprDJBiU9"}],"loudness":-9.957},{"id":"3afRJxKY1unk5U766YIh17","name":"Come Back (Light Therapy)","track_url":"https://open.spotify.com/track/3afRJxKY1unk5U766YIh17","preview_url":"https://p.scdn.co/mp3-preview/e751ddedb5127eccc3aa0fa0c9c581443c734844?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Josh Rouse","artist_url":"https://open.spotify.com/artist/38euc5ce2q2MMzaoJcPstz"}],"loudness":-9.956},{"id":"4du2Ld2qV38l0hl2tqZtbH","name":"Endless","track_url":"https://open.spotify.com/track/4du2Ld2qV38l0hl2tqZtbH","preview_url":"https://p.scdn.co/mp3-preview/5581a466fb2dc5e5b97b8ba07c9416540036669a?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Etro Anime","artist_url":"https://open.spotify.com/artist/1hqgcVwRz5xlqFmVjtANRi"}],"loudness":-9.954},{"id":"5IFCyWplye09HytIP80RCF","name":"Too Close","track_url":"https://open.spotify.com/track/5IFCyWplye09HytIP80RCF","preview_url":"https://p.scdn.co/mp3-preview/a6d24cd483ac3985c3bff3162cfcb4e0fe05007e?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Next","artist_url":"https://open.spotify.com/artist/2MGT7CYlixSPxAnnkhLpaA"}],"loudness":-9.952},{"id":"5JwK7v6XhG0YgqDuCgzOy8","name":"And She Was","track_url":"https://open.spotify.com/track/5JwK7v6XhG0YgqDuCgzOy8","preview_url":"https://p.scdn.co/mp3-preview/0092d65e6daa7210323b1aee6589a04ebb1482a7?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Talking Heads","artist_url":"https://open.spotify.com/artist/2x9SpqnPi8rlE9pjHBwmSC"}],"loudness":-9.947},{"id":"3yUcJwYu7fXAfqMj9krY6l","name":"Thank You","track_url":"https://open.spotify.com/track/3yUcJwYu7fXAfqMj9krY6l","preview_url":"https://p.scdn.co/mp3-preview/9827bf18795cdecafe0bd571487f6fcd858cb805?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Dido","artist_url":"https://open.spotify.com/artist/2mpeljBig2IXLXRAFO9AAs"}],"loudness":-9.942},{"id":"0MR96utQNBHEqxhzpYKovN","name":"blame","track_url":"https://open.spotify.com/track/0MR96utQNBHEqxhzpYKovN","preview_url":"https://p.scdn.co/mp3-preview/932b7b1c83a274b0da1bbadeeb6cf05df688a7aa?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Dazegxd","artist_url":"https://open.spotify.com/artist/59e7YxjDTqYuyxi0kTt4fL"},{"name":"Af1shawty","artist_url":"https://open.spotify.com/artist/6oL8lWoevFyLz9PAFTT4yc"}],"loudness":-9.937},{"id":"70LcF31zb1H0PyJoS1Sx1r","name":"Creep","track_url":"https://open.spotify.com/track/70LcF31zb1H0PyJoS1Sx1r","preview_url":"https://p.scdn.co/mp3-preview/713b601d02641a850f2a3e6097aacaff52328d57?cid=b9f768253ec042088f3bcb2b250ca48c","artists":[{"name":"Radiohead","artist_url":"https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb"}],"loudness":-9.935}],"order":[3,4,9,13,12,8,7,11,2,15,0,5,1,6,14,10]}
+{
+  "id": 9,
+  "puzzles": {
+    "rock": {
+      "tracks": [
+        {
+          "id": "39fUc1PFMJdOUJrSWrPuYp",
+          "name": "Music to Watch Girls By",
+          "track_url": "https://open.spotify.com/track/39fUc1PFMJdOUJrSWrPuYp",
+          "preview_url": "https://p.scdn.co/mp3-preview/528d0df0a6b8147a73b20de5c6a433a34edb1fd2?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "Andy Williams",
+              "artist_url": "https://open.spotify.com/artist/4sj6D0zlMOl25nprDJBiU9"
+            }
+          ],
+          "loudness": -9.957
+        },
+        {
+          "id": "3afRJxKY1unk5U766YIh17",
+          "name": "Come Back (Light Therapy)",
+          "track_url": "https://open.spotify.com/track/3afRJxKY1unk5U766YIh17",
+          "preview_url": "https://p.scdn.co/mp3-preview/e751ddedb5127eccc3aa0fa0c9c581443c734844?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "Josh Rouse",
+              "artist_url": "https://open.spotify.com/artist/38euc5ce2q2MMzaoJcPstz"
+            }
+          ],
+          "loudness": -9.956
+        },
+        {
+          "id": "4du2Ld2qV38l0hl2tqZtbH",
+          "name": "Endless",
+          "track_url": "https://open.spotify.com/track/4du2Ld2qV38l0hl2tqZtbH",
+          "preview_url": "https://p.scdn.co/mp3-preview/5581a466fb2dc5e5b97b8ba07c9416540036669a?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "Etro Anime",
+              "artist_url": "https://open.spotify.com/artist/1hqgcVwRz5xlqFmVjtANRi"
+            }
+          ],
+          "loudness": -9.954
+        },
+        {
+          "id": "5IFCyWplye09HytIP80RCF",
+          "name": "Too Close",
+          "track_url": "https://open.spotify.com/track/5IFCyWplye09HytIP80RCF",
+          "preview_url": "https://p.scdn.co/mp3-preview/a6d24cd483ac3985c3bff3162cfcb4e0fe05007e?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "Next",
+              "artist_url": "https://open.spotify.com/artist/2MGT7CYlixSPxAnnkhLpaA"
+            }
+          ],
+          "loudness": -9.952
+        },
+        {
+          "id": "5JwK7v6XhG0YgqDuCgzOy8",
+          "name": "And She Was",
+          "track_url": "https://open.spotify.com/track/5JwK7v6XhG0YgqDuCgzOy8",
+          "preview_url": "https://p.scdn.co/mp3-preview/0092d65e6daa7210323b1aee6589a04ebb1482a7?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "Talking Heads",
+              "artist_url": "https://open.spotify.com/artist/2x9SpqnPi8rlE9pjHBwmSC"
+            }
+          ],
+          "loudness": -9.947
+        },
+        {
+          "id": "3yUcJwYu7fXAfqMj9krY6l",
+          "name": "Thank You",
+          "track_url": "https://open.spotify.com/track/3yUcJwYu7fXAfqMj9krY6l",
+          "preview_url": "https://p.scdn.co/mp3-preview/9827bf18795cdecafe0bd571487f6fcd858cb805?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "Dido",
+              "artist_url": "https://open.spotify.com/artist/2mpeljBig2IXLXRAFO9AAs"
+            }
+          ],
+          "loudness": -9.942
+        },
+        {
+          "id": "0MR96utQNBHEqxhzpYKovN",
+          "name": "blame",
+          "track_url": "https://open.spotify.com/track/0MR96utQNBHEqxhzpYKovN",
+          "preview_url": "https://p.scdn.co/mp3-preview/932b7b1c83a274b0da1bbadeeb6cf05df688a7aa?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "Dazegxd",
+              "artist_url": "https://open.spotify.com/artist/59e7YxjDTqYuyxi0kTt4fL"
+            },
+            {
+              "name": "Af1shawty",
+              "artist_url": "https://open.spotify.com/artist/6oL8lWoevFyLz9PAFTT4yc"
+            }
+          ],
+          "loudness": -9.937
+        },
+        {
+          "id": "70LcF31zb1H0PyJoS1Sx1r",
+          "name": "Creep",
+          "track_url": "https://open.spotify.com/track/70LcF31zb1H0PyJoS1Sx1r",
+          "preview_url": "https://p.scdn.co/mp3-preview/713b601d02641a850f2a3e6097aacaff52328d57?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "Radiohead",
+              "artist_url": "https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb"
+            }
+          ],
+          "loudness": -9.935
+        }
+      ],
+      "order": [3, 4, 9, 13, 12, 8, 7, 11, 2, 15, 0, 5, 1, 6, 14, 10]
+    },
+    "pop": {
+      "tracks": [
+        {
+          "id": "6pV1lc8lIc8ARNB6KsZukt",
+          "name": "Never Fade Away (SAMURAI Cover)",
+          "track_url": "https://open.spotify.com/track/6pV1lc8lIc8ARNB6KsZukt",
+          "preview_url": "https://p.scdn.co/mp3-preview/78932b31ddae77952e9b09789479cadd64d33b85?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "P.T. Adamczyk",
+              "artist_url": "https://open.spotify.com/artist/27VhXJzIph9c75cBh1e8XM"
+            },
+            {
+              "name": "Olga Jankowska",
+              "artist_url": "https://open.spotify.com/artist/21wBpKqWBjOZA1lERaq4lb"
+            }
+          ],
+          "loudness": -11.424
+        },
+        {
+          "id": "6SEolIp22t0DzeBfCBo3hr",
+          "name": "Vibin' Out",
+          "track_url": "https://open.spotify.com/track/6SEolIp22t0DzeBfCBo3hr",
+          "preview_url": "https://p.scdn.co/mp3-preview/444eb3b2a23095f63d30e6dafef6ead8364c631a?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "FKJ",
+              "artist_url": "https://open.spotify.com/artist/2FwDTncULUnmANIh7qKa5z"
+            },
+            {
+              "name": "((( O )))",
+              "artist_url": "https://open.spotify.com/artist/5rBFU1rhgs1nNghopuj9k8"
+            }
+          ],
+          "loudness": -11.422
+        },
+        {
+          "id": "7KMm1zF2QOTSw2t01IAFif",
+          "name": "Counting Stars",
+          "track_url": "https://open.spotify.com/track/7KMm1zF2QOTSw2t01IAFif",
+          "preview_url": "https://p.scdn.co/mp3-preview/6c9d4f1c922a44ee4e1194af3283c0ecf36b5129?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "Nujabes",
+              "artist_url": "https://open.spotify.com/artist/3Rq3YOF9YG9YfCWD4D56RZ"
+            }
+          ],
+          "loudness": -11.41
+        },
+        {
+          "id": "2I0t9apRfrVbkxr8Fym2yf",
+          "name": "Sorry Now",
+          "track_url": "https://open.spotify.com/track/2I0t9apRfrVbkxr8Fym2yf",
+          "preview_url": "https://p.scdn.co/mp3-preview/3bf8b2bbe4ff7b2fe899e60fd69139a16e223359?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "Jill Andrews",
+              "artist_url": "https://open.spotify.com/artist/35VpsbV6V2NdfTeNZEbKfc"
+            }
+          ],
+          "loudness": -11.398
+        },
+        {
+          "id": "5jyj2XKWILHQxDoz59ddCT",
+          "name": "Billie Toppy",
+          "track_url": "https://open.spotify.com/track/5jyj2XKWILHQxDoz59ddCT",
+          "preview_url": "https://p.scdn.co/mp3-preview/c6de1ae1cbddfc776328d9611e784f5aed23f383?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "Men I Trust",
+              "artist_url": "https://open.spotify.com/artist/3zmfs9cQwzJl575W1ZYXeT"
+            }
+          ],
+          "loudness": -11.396
+        },
+        {
+          "id": "05MqkhneIhKSPJ76FBSULY",
+          "name": "Warm Healer",
+          "track_url": "https://open.spotify.com/track/05MqkhneIhKSPJ76FBSULY",
+          "preview_url": "https://p.scdn.co/mp3-preview/638398939862b639331831a6e6a0fd3eab3cd4ce?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "Everything Everything",
+              "artist_url": "https://open.spotify.com/artist/1HOeqtP7tHkKNJNLzQ2tnr"
+            }
+          ],
+          "loudness": -11.389
+        },
+        {
+          "id": "5YSI1311X8t31PBjkBG4CZ",
+          "name": "Wuthering Heights",
+          "track_url": "https://open.spotify.com/track/5YSI1311X8t31PBjkBG4CZ",
+          "preview_url": "https://p.scdn.co/mp3-preview/fdf60efd848715c0fe34182d5bb61946076ccadb?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "Kate Bush",
+              "artist_url": "https://open.spotify.com/artist/1aSxMhuvixZ8h9dK9jIDwL"
+            }
+          ],
+          "loudness": -11.381
+        },
+        {
+          "id": "0LhD4CymsMXbIzuPhMEel0",
+          "name": "Aquarium",
+          "track_url": "https://open.spotify.com/track/0LhD4CymsMXbIzuPhMEel0",
+          "preview_url": "https://p.scdn.co/mp3-preview/65cba771c1e78ceb1c9236d4cbe63609d0577d1a?cid=b9f768253ec042088f3bcb2b250ca48c",
+          "artists": [
+            {
+              "name": "bohemianvoodoo",
+              "artist_url": "https://open.spotify.com/artist/2pKjlyTAEzqUAFsQNCgmkS"
+            }
+          ],
+          "loudness": -11.373
+        }
+      ],
+      "order": [1, 11, 14, 7, 6, 10, 5, 13, 0, 4, 15, 3, 9, 12, 8, 2]
+    }
+  }
+}
